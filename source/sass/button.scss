@@ -25,3 +25,12 @@
   }
 }
 
+@media (max-width: $tablet-width) {
+  .button {
+    padding: 20px 32px;
+
+    &--presentation {
+      margin-top: 36px;
+    }
+  }
+}
