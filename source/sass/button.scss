@@ -34,3 +34,14 @@
     }
   }
 }
+
+@media (max-width: $mobile-width) {
+  .button {
+    padding: 20px 82px;
+
+    &--presentation {
+      box-sizing: content-box;
+      margin: 37px auto 0 auto;
+    }
+  }
+}
