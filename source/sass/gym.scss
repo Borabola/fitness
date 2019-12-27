@@ -1,0 +1,164 @@
+.gym {
+  color: $primary-color;
+}
+
+.gym__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 96.7%;
+  max-width: $desktop-width;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  margin: 0 auto;
+
+  & h2 {
+    font-family: "Bebas Neue Cyrillic", cursive;
+    font-size: 49px;
+    line-height: 49px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  & h3 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 39px;
+  }
+
+  & p {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+}
+
+.gym__first-container {
+  max-width: 365px;
+  padding-top: 50px;
+  margin-left: 60px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.gym__second-container {
+  position: relative;
+  width: 62.33%;
+  max-width: 723px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.gym__picture {
+  //width: 91.28%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  margin-left: 63px;
+  padding-bottom: 122px;
+  line-height: 0;
+}
+
+.gym__video {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+
+  & img {
+    line-height: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+  }
+
+  & picture {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+}
+
+
+.gym__video--overlay::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 97%;
+  background: rgba(20, 54, 122, 0.5);
+  z-index: 2;
+}
+
+.gym__button-container {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: calc(50% - 50px);
+  bottom: calc(50% - 46px);
+  background: linear-gradient(44.89deg, rgba(0, 61, 133, 0.2) 25.38%, rgba(184, 0, 39, 0.2) 74.89%);
+
+  background-clip: padding-box;
+  background-origin: border-box;
+  background-size: cover;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  z-index: 2;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: calc(50% - 47px);
+    right: calc(50% - 47px);
+
+    width: 94px;
+    height: 94px;
+    background: url("../img/gym-video@1x.jpg"), rgba(20, 54, 122, 0.5);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+    background-size: initial;
+    border-radius: 50%;
+  }
+}
+
+.gym__button {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  left: calc(50% - 36px);
+  bottom: calc(50% - 36px);
+
+  border-radius: 50%;
+  background: linear-gradient(44.89deg, #003d85 25.38%, #b80027 74.89%) no-repeat;
+  background-origin: content-box;
+  background-clip: content-box;
+  box-shadow: 0 0 0 15px transparent;
+  box-sizing: content-box;
+  z-index: 2;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: calc(50% - 8px);
+    right: calc(50% - 16px);
+    width: 1px;
+    height: 1px;
+    border: 7px solid transparent;
+    border-left: 12px solid $second-color;
+    z-index: 3;
+  }
+}
