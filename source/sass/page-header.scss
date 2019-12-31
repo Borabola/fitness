@@ -156,10 +156,14 @@
 }
 
 @media (max-width: $tablet-width) {
+  .page-header {
+    min-height: unset;
+  }
+
   .page-header__wrapper {
     width: 88.28%;
     padding-top: 39px;
-    padding-bottom: 70px;
+    padding-bottom: 84px;
   }
 
   .page-header__first-line {
