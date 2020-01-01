@@ -42,6 +42,11 @@
     border: none;
   }
   }
+
+  &--promo {
+    padding: 24px 56px;
+    margin-top: 47px;
+  }
 }
 
 .subscription__item:hover > .button--subscription,
@@ -83,6 +88,21 @@
         margin-top: 33px;
       }
     }
+
+    &--promo {
+      padding: 12px 32px;
+      margin-top: 3.9vw; //30px;
+      margin-bottom: auto;
+      font-size: 10px;
+      line-height: 12px;
+      letter-spacing: 0.05em;
+      border: 2px solid $second-color;
+
+      &:hover,
+      &:active {
+        border: 2px solid $second-color-active;
+      }
+    }
   }
 
   .subscription__item:hover > .button--subscription,
@@ -114,5 +134,13 @@
         margin-top: 31px;
       }
     }
+
+    &--promo {
+      padding: 12px 51px;
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
   }
 }
