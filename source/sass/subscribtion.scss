@@ -30,20 +30,17 @@
   margin: 0 auto 10px auto;
   list-style: none;
 
-  & label{
+  & label {
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
-  }
-}
+    cursor: pointer;
 
-.subscription__period label {
-  cursor: pointer;
-
-  &:hover,
-  &:hover {
-    color: $primary-color-active;
+    &:hover,
+    &:hover {
+      color: $primary-color-active;
+    }
   }
 }
 
@@ -85,23 +82,6 @@
   display: flex;
   justify-content: space-between;
   list-style: none;
-
- /* &::after {
-    content: "";
-
-    position: absolute;
-    bottom:-215px;
-    right: -210px;
-
-    width: 321px;
-    height: 384px;
-    transform: rotate(150deg);
-    background: url("../img/panecakes500.png");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 321px 384px;
-    z-index: 1;
-  }*/
 }
 
 .subscription__item {
@@ -119,7 +99,7 @@
     padding-top: 55px;
     padding-bottom: 60px;
     border: 7px solid;
-    border-image-source: (linear-gradient(111.72deg, #ED0233 17.6%, #003EB7 95.31%));
+    border-image-source: (linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%));
     border-image-slice: 1;
   }
 
@@ -148,13 +128,12 @@
     margin-bottom: 67px;
     text-align: center;
   }
-    & span {
-      padding-left: 10px;
-      font-weight: 500;
-      color: $primary-color;
-    }
 
-
+  & span {
+    padding-left: 10px;
+    font-weight: 500;
+    color: $primary-color;
+  }
 }
 
 @mixin bg-text {
@@ -189,12 +168,12 @@
     content: "5000";
   }
 
-  &--1700:before {
-      @include bg-text;
-      content: "1700";
+  &--1700::before {
+    @include bg-text;
+    content: "1700";
     }
 
-  &--2700:before {
+  &--2700::before {
     @include bg-text;
     content: "2700";
   }
@@ -207,7 +186,7 @@
   //width: calc(184px + 1.65vw);
   //left: calc(95vw - 184px);
   //right: -1.65vw;
- // width: calc(184px + 1.65vw);
+  // width: calc(184px + 1.65vw);
   left: calc(50% + 410px);
   width: calc(50vw - 410px);
   height: 330px;
@@ -218,7 +197,7 @@
     content: "";
 
     position: absolute;
-    top:-30px;
+    top: -30px;
     left: 60px;
 
     width: 321px;
@@ -285,7 +264,7 @@
     padding: 26px 44px;
     margin-top: 33px;
     color: $second-color;
-    background: linear-gradient(111.72deg, #ED0233 17.6%, #003EB7 95.31%);
+    background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
     border: none;
   }
 
@@ -378,8 +357,8 @@
     padding-left: 6px;
   }
 
-  .subscription__price--1700:before,
-  .subscription__price--2700:before,
+  .subscription__price--1700::before,
+  .subscription__price--2700::before,
   .subscription__price--5000::before {
     font-size: 80px;
     line-height: 120px;

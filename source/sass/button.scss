@@ -35,12 +35,12 @@
 
     &:hover,
     &:focus {
-    padding: 26px 47px;
-    margin-top: 31px;
-    color: $second-color-active;
-    background: linear-gradient(111.72deg, #ED0233 17.6%, #003EB7 95.31%);
-    border: none;
-  }
+      padding: 26px 47px;
+      margin-top: 31px;
+      color: $second-color-active;
+      background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
+      border: none;
+    }
   }
 
   &--promo {
@@ -54,7 +54,7 @@
   padding: 26px 47px;
   margin-top: 31px;
   color: $second-color;
-  background: linear-gradient(111.72deg, #ED0233 17.6%, #003EB7 95.31%);
+  background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
   border: none;
 
   &:hover {
@@ -62,7 +62,7 @@
   }
 
   .subscription__item:active > .button--subscription {
-    background: linear-gradient(111.72deg, rgba(184, 0, 39, 0.2) 17.6%, rgba(0, 61, 133, 0.2) 95.31%)
+    background: linear-gradient(111.72deg, rgba(184, 0, 39, 0.2) 17.6%, rgba(0, 61, 133, 0.2) 95.31%);
   }
 }
 
@@ -110,7 +110,7 @@
     padding: 26px 44px;
     margin-top: 33px;
     color: $second-color;
-    background: linear-gradient(111.72deg, #ED0233 17.6%, #003EB7 95.31%);
+    background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
     border: none;
   }
 }
@@ -125,8 +125,8 @@
     }
 
     &--subscription {
-        padding: 24px 45px;
-        margin: 29px auto 0;
+      padding: 24px 45px;
+      margin: 29px auto 0;
 
       &:hover,
       &:focus {
@@ -141,6 +141,5 @@
       margin-left: auto;
       margin-right: auto;
     }
-
   }
 }

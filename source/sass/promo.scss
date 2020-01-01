@@ -12,7 +12,7 @@
 
 .promo__red {
   width: 43.1%;
-  background-color: #ED0233;
+  background-color: #ed0233;
 
   & p {
     font-size: 18px;
@@ -54,6 +54,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .promo__date-date {
   font-size: 18px;
   line-height: 27px;
@@ -107,6 +108,7 @@
   .promo__red {
     display: flex;
   }
+
   .promo__wrapper {
     width: 88.28%;
     padding-top: 100px;
@@ -148,6 +150,7 @@
     font-size: 24px;
     line-height: 36px;
   }
+
   .promo__date-value {
     padding-top: 2px;
   }
@@ -171,6 +174,7 @@
   .promo__time-block .promo__date-value {
     padding-top: 0;
   }
+
   .promo__red p {
     font-size: 12px;
     line-height: 18px;
@@ -214,6 +218,15 @@
     margin-left: 0;
   }
 
+  .promo__month {
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .promo__year {
+    margin-top: -2px;
+  }
+
   .promo__blue {
     position: relative;
     width: 100%;
@@ -228,7 +241,7 @@
       width: 150%;
       height: auto;
       transform: translate(-50%, -40%);
-      object-fit:cover;
+      object-fit: cover;
     }
   }
 }
