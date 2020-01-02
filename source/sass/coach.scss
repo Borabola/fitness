@@ -80,8 +80,8 @@
   left: 0;
 
   display: none;
-  width: 100%;
-  height: 100%;
+  width: 92%;
+  height: 99%;
   padding: 50px 45px;
   color: $second-color;
 
@@ -154,6 +154,7 @@
   left: -55px;
   top: 44%;
   background: url("../img/arrow-left.svg");
+  background-repeat: no-repeat;
 }
 
 .coach__slider-control--right {
@@ -162,4 +163,132 @@
   right: -57px;
   top: 45%;
   background: url("../img/arrow-right.svg");
+  background-repeat: no-repeat;
+}
+
+@media (max-width: $tablet-width) {
+  .coach {
+    text-align: center;
+  }
+
+  .coach__wrapper {
+    width: 79%;
+    padding-top: 15px;
+    padding-bottom: 84px;
+    padding-left: 40px;
+
+    & h2 {
+      font-size: 42px;
+      line-height: 42px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .coach__slider-item {
+    box-sizing: border-box;
+    position: relative;
+    //flex: 0 0 50%;
+    flex: 0 0 50.5%;
+    width: 50%; //22.41%;
+    height: 38.28vw;
+    padding-right: 35px;
+    margin: 0;
+
+    & img,
+    & picture {
+      width: 105%;
+      height: 105%;
+    }
+
+    & h3 {
+      margin-left: -20px;
+    }
+  }
+
+  .coach__slider-control--left {
+    left: -57px;
+  }
+
+  .coach__slider-control--right {
+    right: -17px;
+    top: 44%;
+  }
+
+  .coach__slider-item-inner {
+    width: 89%;
+    height: 100%;
+
+    & h4 {
+      padding-right: 7px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    & p {
+      padding-right: 12px;
+      margin-top: -2px;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .coach__wrapper {
+    width: 70.63%;
+    padding-top: 0;
+    padding-bottom: 84px;
+    padding-left: 0;
+
+    & h2 {
+      font-size: 32px;
+      line-height: 32px;
+      margin-bottom: 42px;
+    }
+  }
+
+  .coach__slider-item {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 85.63vw;
+    padding-right: 0;
+    margin: 0;
+
+    & img,
+    & picture {
+      width: 100%;
+      height: 100%;
+    }
+
+    & h3 {
+      margin-left: 0;
+    }
+  }
+
+  .coach__slider-control--left {
+    left: -32px;
+    top: 47%;
+    background-size: 60%;
+  }
+
+  .coach__slider-control--right {
+    right: -39px;
+    top: 46.5%;
+    background-size: 60%;
+  }
+
+  .coach__slider-item-inner {
+    width: 100%;
+    height: 100%;
+    padding: 41px 25px;
+
+    & h4 {
+      padding-right: 0;
+    }
+
+    & p {
+      margin-bottom: 32px;
+      padding-left: 8px;
+    }
+  }
 }
