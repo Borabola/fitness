@@ -2,14 +2,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 96.7%;
+  width: 84.92%;
   max-width: $desktop-width;
-  padding-top: 80px;
+  padding-top: 120px;
   padding-bottom: 115px;
   margin: 0 auto;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;
   color: $second-color;
+  text-align: center;
 
   & h2 {
     font-family: "Bebas Neue Cyrillic", cursive;
@@ -18,5 +19,199 @@
     letter-spacing: 0.03em;
     color: $primary-color;
     margin-bottom: 50px;
+  }
+}
+
+.discounts__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.discounts__unlimited {
+  display: flex;
+  width: 48.28%;
+  color: $second-color;
+}
+
+.discounts__year {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 34px 35px 35px 45px;
+  background-color: $bg_bright;
+  text-align: left;
+
+  & a {
+    display: block;
+    width: fit-content;
+    margin-top: auto;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $second-color;
+    border-bottom: 1px solid $second-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $second-color-active;
+      border-bottom: 1px solid $second-color-active;
+    }
+  }
+
+  & b {
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 109%;
+    margin-bottom: 15px;
+  }
+
+  & p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  & p:first-of-type {
+    margin-bottom: -9px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 44px;
+  }
+}
+
+.discounts__picture {
+  box-sizing: border-box;
+  width: 50%;
+  background: #4370de url("../img/discount_img@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 35% 50%;
+}
+
+.discounts__list {
+  display: flex;
+  flex-direction: column;
+  width: 48.19%;
+  color: $primary-color;
+  text-align: left;
+
+  & h4 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 33px;
+    margin-bottom: 7px;
+  }
+
+  & p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.discounts__free-month,
+.discounts__20 {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 25px;
+  margin-right: 7px;
+  border: 7px solid;
+  border-image-source: (linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%));
+  border-image-slice: 1;
+
+  & a {
+    display: block;
+    width: fit-content;
+    margin-top: 71px;
+    margin-bottom: 9px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $primary-color;
+    border-bottom: 1px solid $primary-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $bg_bright;
+      border-bottom: 1px solid $bg_bright;
+    }
+  }
+}
+
+.discounts__free-month {
+  margin-bottom: 40px;
+}
+
+@media (max-width: $tablet-width) {
+  .discounts__wrapper {
+    width: 88.28%;
+    padding-top: 100px;
+    padding-bottom: 182px;
+
+    & h2 {
+      font-size: 42px;
+      line-height: 42px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  .discounts__container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .discounts__unlimited {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .discounts__year {
+    width: 41%;
+  }
+
+  .discounts__picture {
+    width: 59%;
+    height: 60.25vw;
+  }
+
+  .discounts__list {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .discounts__free-month,
+  .discounts__20 {
+    width: 47.8%;
+    padding: 21px 28px;
+    margin-right: 0;
+
+    & a {
+      margin-bottom: 7px;
+    }
+  }
+
+  .discounts__free-month {
+    margin-bottom: 0;
+
+    & p {
+      width: 75%;
+    }
+
+    & a {
+      margin-top: 48px;
+    }
   }
 }
