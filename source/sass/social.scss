@@ -68,3 +68,56 @@
   height: 13px;
   background: url("../img/vk.png") no-repeat center center;
 }
+
+@media (max-width: $tablet-width) {
+  .social__list {
+    width: 100px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .social__list {
+    width: 143px;
+  }
+
+  .social__item {
+    height: 27px;
+
+    &--vk {
+      width: 32px;
+      height: 17px;
+      margin: auto 0;
+    }
+
+    &--ig {
+      width: 27px;
+      height: 27px;
+      margin-top: 4px;
+    }
+
+    &--fb {
+      width: 14px;
+      height: 27px;
+      margin-top: 4px;
+    }
+  }
+
+  .social__link--ig {
+    width: 27px;
+    height: 27px;
+    background-size: cover;
+  }
+
+  .social__link--facebook {
+    width: 14px;
+    height: 27px;
+    background-size: cover;
+  }
+
+  .social__link--vk {
+    width: 32px;
+    height: 17px;
+    background-size: cover;
+  }
+}
+

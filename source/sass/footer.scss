@@ -55,3 +55,75 @@
   width: 111px;
   margin-top: -8px;
 }
+
+@media (max-width: $tablet-width) {
+  .page-footer__wrapper {
+    width: 88.28%;
+    padding-top: 47px;
+    padding-bottom: 43px;
+  }
+
+  .page-footer__logo {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .page-footer__menu {
+    padding-left: 49px;
+    padding-top: 1px;
+
+    & a {
+      margin-right: 30px;
+    }
+  }
+
+  .page-footer__social {
+    width: 100px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .page-footer__wrapper {
+    position: relative;
+    flex-direction: column;
+    width: 90.63%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .page-footer__logo {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    align-self: flex-start;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .page-footer__menu {
+    display: flex;
+    width: 108%;
+    height: 104px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 2px;
+    padding-top: 0;
+    margin-bottom: 34px;
+
+    & a {
+      margin-right: 0;
+      margin-bottom: 9px;
+
+      &:first-child {
+        padding-top: 40px;
+      }
+    }
+  }
+
+  .page-footer__social {
+    width: 100%;
+  }
+}
