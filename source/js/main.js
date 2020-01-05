@@ -1,7 +1,7 @@
 'use strict';
 var multiItemSlider = (function () {
 
-  /*function _isElementVisible(element) {
+  function _isElementVisible(element) {
     var rect = element.getBoundingClientRect(),
       vWidth = window.innerWidth || doc.documentElement.clientWidth,
       vHeight = window.innerHeight || doc.documentElement.clientHeight,
@@ -15,16 +15,16 @@ var multiItemSlider = (function () {
       || element.contains(elemFromPoint(rect.right, rect.bottom))
       || element.contains(elemFromPoint(rect.left, rect.bottom))
     );
-  }*/
+  }
 
   return function (selector, config) {
     var
-      _mainElement = document.querySelector('.coach'), // основный элемент блока
-      _sliderWrapper = _mainElement.querySelector('.coach__slider-wrapper'), // обертка для .slider-item
-      _sliderItems = _mainElement.querySelectorAll('.coach__slider-item'), // элементы (.slider-item)
-      _sliderControls = _mainElement.querySelectorAll('.coach__slider-control'), // элементы управления
-      _sliderControlLeft = _mainElement.querySelector('.coach__slider-control--left'), // кнопка "LEFT"
-      _sliderControlRight = _mainElement.querySelector('.coach__slider-control--right'), // кнопка "RIGHT"
+      _mainElement = document.querySelector(selector), // основный элемент блока
+      _sliderWrapper = _mainElement.querySelector('.slider-wrapper'), // обертка для .slider-item
+      _sliderItems = _mainElement.querySelectorAll('.slider-item'), // элементы (.slider-item)
+      _sliderControls = _mainElement.querySelectorAll('.slider-control'), // элементы управления
+      _sliderControlLeft = _mainElement.querySelector('.slider-control--left'), // кнопка "LEFT"
+      _sliderControlRight = _mainElement.querySelector('.slider-control--right'), // кнопка "RIGHT"
       _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width), // ширина обёртки
       _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width), // ширина одного элемента
       _positionLeftItem = 0, // позиция левого активного элемента
@@ -105,9 +105,9 @@ var multiItemSlider = (function () {
 
     var _transformItem = function (direction) {
       var nextItem;
-        /*if (!_isElementVisible(_mainElement)) {
+        if (!_isElementVisible(_mainElement)) {
         return;
-      } */
+      }
       if (direction === 'right') {
         _positionLeftItem++;
         if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
@@ -142,9 +142,9 @@ var multiItemSlider = (function () {
 
     // обработчик события click для кнопок "назад" и "вперед"
     var _controlClick = function (e) {
-      if (e.target.classList.contains('coach__slider-control')) {
+      if (e.target.classList.contains('slider-control')) {
         e.preventDefault();
-        var direction = e.target.classList.contains('coach__slider-control--right') ? 'right' : 'left';
+        var direction = e.target.classList.contains('slider-control--right') ? 'right' : 'left';
         _transformItem(direction);
         clearInterval(_interval);
         _cycle(_config.direction);
@@ -164,11 +164,11 @@ var multiItemSlider = (function () {
     var _refresh = function () {
       clearInterval(_interval);
       _mainElement.innerHTML = _html;
-      _sliderWrapper = _mainElement.querySelector('.coach__slider-wrapper');
-      _sliderItems = _mainElement.querySelectorAll('.coach__slider__item');
-      _sliderControls = _mainElement.querySelectorAll('.coach__slider-control');
-      _sliderControlLeft = _mainElement.querySelector('.coach__slider-control--left');
-      _sliderControlRight = _mainElement.querySelector('.coach__slider-control--right');
+      _sliderWrapper = _mainElement.querySelector('.slider-wrapper');
+      _sliderItems = _mainElement.querySelectorAll('.slider__item');
+      _sliderControls = _mainElement.querySelectorAll('.slider-control');
+      _sliderControlLeft = _mainElement.querySelector('.slider-control--left');
+      _sliderControlRight = _mainElement.querySelector('.slider-control--right');
       _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width);
       _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width);
       _positionLeftItem = 0;
@@ -234,8 +234,12 @@ var multiItemSlider = (function () {
 
   }
 }());
-multiItemSlider();
+/*multiItemSlider('.coach', {
+  isCycling: true});
+multiItemSlider('.feedback', {
+  isCycling: true}); */
 
-/*var slider = multiItemSlider('.coach', {
-  isCycling: true
-});*/
+multiItemSlider('.coach', {
+  isCycling: false});
+multiItemSlider('.feedback', {
+  isCycling: false});

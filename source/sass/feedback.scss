@@ -1,0 +1,145 @@
+.feedback__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 96.7%;
+  max-width: $desktop-width;
+  padding-top: 5px;
+  padding-bottom: 120px;
+  margin: 0 auto;
+  color: $second-color;
+  text-align: center;
+
+  & h2 {
+    margin-bottom: 50px;
+    font-family: "Bebas Neue Cyrillic", cursive;
+    font-size: 49px;
+    line-height: 49px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $primary-color;
+
+  }
+
+  & li {
+    width: 40%;
+    padding: 30px 35px;
+    margin: 0 auto;
+    background-color: $bg-dark;
+  }
+}
+
+.feedback__slider {
+  position: relative;
+  //overflow: hidden;
+}
+
+.feedback__slider-container {
+  width: 48.3%;
+  margin: 0 auto;
+  transition: transform 0.6s ease;
+  overflow: hidden;
+}
+
+.feedback__slider-wrapper {
+  display: flex;
+
+}
+
+.feedback__slider-item {
+  box-sizing: border-box;
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  //height: 21.52vw;
+  padding: 54px 55px 58px 60px;
+  background-color: $bg-dark;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+.feedback__img-container {
+  position: absolute;
+  top: 62px;
+  left: 61px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  & img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 216px;
+    height: auto;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.feedback__text {
+  padding-left: 110px;
+  text-align: left;
+
+  & h4 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 12px;
+  }
+
+  & p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.feedback__slider-control {
+  position: absolute;
+  width: 16px;
+  height: 32px;
+  margin-left: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  //transform: translateY(-180%);
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.feedback__slider-control--left {
+  width: 16px;
+  height: 32px;
+  left: 243px;
+  top: 43%;
+  background: url("../img/arrow-left.svg");
+  background-repeat: no-repeat;
+}
+
+.feedback__slider-control--right {
+  width: 18px;
+  height: 32px;
+  right: 243px;
+  top: 43%;
+  background: url("../img/arrow-right.svg");
+  background-repeat: no-repeat;
+}
+
+@media (max-width: $tablet-width) {
+  .discounts__wrapper {
+    width: 79%;
+    padding-top: 100px;
+    padding-bottom: 90px;
+
+    & h2 {
+      font-size: 42px;
+      line-height: 42px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+}
