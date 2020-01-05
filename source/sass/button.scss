@@ -47,6 +47,19 @@
     padding: 24px 56px;
     margin-top: 47px;
   }
+
+  &--contact {
+    width: 100%;
+    padding: 15px 50px;
+    font-size: 14px;
+    line-height: 16px;
+    border: 3px solid $second-color;
+    background-color: $bg-dark;
+
+    &:hover {
+      border: 3px solid $second-color-active;
+    }
+  }
 }
 
 .subscription__item:hover > .button--subscription,
@@ -102,6 +115,10 @@
       &:active {
         border: 2px solid $second-color-active;
       }
+    }
+
+    &--contact {
+      width: 100%;
     }
   }
 

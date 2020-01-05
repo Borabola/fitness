@@ -2,4 +2,56 @@
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
+  color: $second-color;
+  background-color: #030A1A;
+}
+
+.page-footer__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 84.92%;
+  max-width: $desktop-width;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  margin: 0 auto;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  color: $second-color;
+}
+
+.page-footer__logo {
+  font-family: "Bebas Neue Cyrillic", cursive;
+  font-size: 26px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+}
+
+.page-footer__menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 65px;
+
+  & a {
+    margin-right: 41px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    color: $second-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $second-color-active;
+    }
+  }
+}
+
+.page-footer__social {
+  display: flex;
+  justify-content: space-between;
+  width: 111px;
+  margin-top: -8px;
 }

@@ -46,19 +46,19 @@
             <div class="page-header__social">
               <ul>
                 <li>
-                  <a class="social__link social__link--facebook" href="#">
+                  <a href="#">
                     <span class="visually-hidden">Мы в Фейсбук</span>
                     <span>fb</span>
                   </a>
                 </li>
-                <li class="social__item">
-                  <a class="social__link social__link--vk" href="#">
+                <li>
+                  <a href="#">
                     <span class="visually-hidden">Мы в ВКонтакте</span>
                     <span>vk</span>
                   </a>
                 </li>
-                <li class="social__item">
-                  <a class="social__link social__link--ig" href="#">
+                <li>
+                  <a href="#">
                     <span class="visually-hidden">Мы в Инстаграмм</span>
                     <span>ig</span>
                   </a>
@@ -100,7 +100,7 @@
           </div>
           </div>
       </section>
-      <section class="subscription">
+      <section class="subscription" id="subscription">
         <div class="subscription__wrapper">
           <h2>Абонементы</h2>
           <div class="subscription__period">
@@ -178,7 +178,7 @@
           </div>
         </div>
       </section>
-      <section class="coach">
+      <section class="coach" id="coach">
         <div class="coach__wrapper ">
           <h2>Тренеры</h2>
           <div class="coach__slider slider ">
@@ -385,7 +385,7 @@
         </div>
 
       </section>
-      <section class="discounts">
+      <section class="discounts" id="discounts">
         <div class="discounts__wrapper">
           <h2>Акции</h2>
           <div class="discounts__container">
@@ -452,10 +452,87 @@
           </div>
         </div>
       </section>
+      <section class="contact">
+          <div class="contact__form">
+            <div class="contact__form-wrapper">
+              <h2>БЕСПЛАТНОЕ занятие </h2>
+              <form class="contact__form-form" method="post" action="https://echo.htmlacademy.ru">
+                <div>
+                  <label for="user-name">Имя </label>
+                  <input id="user-name" type="text" name="user-name" minlength="3" maxlength="30" required>
+                </div>
+                <div>
+                  <label for="user-phone-number">Телефон</label>
+                  <input id="user-phone-number" type="tel" name="phone-number" required>
+                </div>
+                <button class="button button--contact" type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+          <div class="contact__contacts">
+            <div class="contact__contacts-wrapper">
+              <h2>Контакты</h2>
+              <div class="contact__contacts-container">
+                <div class="contact__first-column">
+                  <div class="contact__item">
+                    <h3>Адрес:</h3>
+                    <p>г. Омск, ул. 60 лет Октября, 7</p>
+                  </div>
+                  <div class="contact__item">
+                    <h3>График работы:</h3>
+                    <p>Пн-Вс: с 8:00 до 22:00</p>
+                  </div>
+
+                </div>
+                <div class="contact__second-column">
+                  <div class="contact__item">
+                    <h3>Телефон:</h3>
+                    <a href="tel:+8-800-555-55-55" aria-label="Набрать номер телефона +8-800-555-55-55">8-800-555-55-55</a>
+                  </div>
+                  <div class="contact__item">
+                    <h3>Email:</h3>
+                    <a href="mailto:omsk@supergym.ru" aria-label="Написать письмо">omsk@supergym.ru</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
 
     </main>
   </div>
   <footer class="page-footer">
+    <div class="page-footer__wrapper">
+      <div class="page-footer__logo">Supergym</div>
+      <nav class="page-footer__menu">
+        <a href="#">Услуги</a>
+        <a href="#subscription">Абонементы</a>
+        <a href="#discounts">Акции</a>
+        <a href="#coach">Тренеры</a>
+        <a href="#">Расписание</a>
+      </nav>
+      <div class="page-footer__social social">
+        <ul class="social__list">
+          <li class="social__item social__item--vk">
+            <a class="social__link social__link--vk" href="#">
+              <span class="visually-hidden">Мы в ВКонтакте</span>
+            </a>
+          </li>
+          <li class="social__item social__item--ig">
+            <a class="social__link social__link--ig" href="#">
+              <span class="visually-hidden">Мы в Инстаграмм</span>
+            </a>
+          </li>
+          <li class="social__item social__item--fb">
+            <a class="social__link social__link--facebook" href="#">
+              <span class="visually-hidden">Мы в Фейсбук</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
 
     <!--<div class="page-header__social social">
       <ul class="social__list">
@@ -481,6 +558,6 @@
       </div> -->
   </footer>
 </div>
-<script src="js/main2.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

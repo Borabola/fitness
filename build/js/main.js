@@ -1,7 +1,7 @@
 'use strict';
 var multiItemSlider = (function () {
 
-  /*function _isElementVisible(element) {
+  function _isElementVisible(element) {
     var rect = element.getBoundingClientRect(),
       vWidth = window.innerWidth || doc.documentElement.clientWidth,
       vHeight = window.innerHeight || doc.documentElement.clientHeight,
@@ -15,7 +15,7 @@ var multiItemSlider = (function () {
       || element.contains(elemFromPoint(rect.right, rect.bottom))
       || element.contains(elemFromPoint(rect.left, rect.bottom))
     );
-  }*/
+  }
 
   return function (selector, config) {
     var
@@ -105,9 +105,9 @@ var multiItemSlider = (function () {
 
     var _transformItem = function (direction) {
       var nextItem;
-        /*if (!_isElementVisible(_mainElement)) {
+        if (!_isElementVisible(_mainElement)) {
         return;
-      } */
+      }
       if (direction === 'right') {
         _positionLeftItem++;
         if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
@@ -234,11 +234,12 @@ var multiItemSlider = (function () {
 
   }
 }());
-multiItemSlider('.coach', {
+/*multiItemSlider('.coach', {
   isCycling: true});
 multiItemSlider('.feedback', {
-  isCycling: true});
+  isCycling: true}); */
 
-/*var slider = multiItemSlider('.coach', {
-  isCycling: true
-});*/
+multiItemSlider('.coach', {
+  isCycling: false});
+multiItemSlider('.feedback', {
+  isCycling: false});
