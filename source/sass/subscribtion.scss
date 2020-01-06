@@ -65,6 +65,14 @@
   background: $bright;
 }
 
+.subscription__bar--six {
+  width: 60%;
+}
+
+.subscription__bar--twelve {
+  width: 100%;
+}
+
 #one:checked ~ .subscription__bar {
   width: 20%;
 }

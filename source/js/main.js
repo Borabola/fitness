@@ -372,13 +372,22 @@ function onRadioInputChange() {
   var subscriptionList = subListTemplate.cloneNode(true);
 
   if (inputOne.checked) {
+    if (subscriptionBlock.children[2].children[0].children[0].classList.contains('subscription__bar--six')) {
+      subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--six');
+    }
+    if (subscriptionBlock.children[2].children[0].children[0].classList.contains('subscription__bar--twelve')) {
+      subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--twelve');
+    }
     subscriptionList.children[0].children[1].textContent = '12 занятий';
     subscriptionList.children[0].children[2].textContent = '5000';
     subscriptionList.children[1].children[2].textContent = '1700';
     subscriptionList.children[2].children[2].textContent = '2700';
   } else {
     if (inputSix.checked) {
-      console.log(subscriptionList.children[0].children[1]);
+      subscriptionBlock.children[2].children[0].children[0].classList.add("subscription__bar--six");
+      if (subscriptionBlock.children[2].children[0].children[0].classList.contains('subscription__bar--twelve')) {
+        subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--twelve');
+      }
       subscriptionList.children[0].children[1].textContent = '72 занятий';
       subscriptionList.children[0].children[2].textContent = '30000';
       subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
@@ -391,6 +400,7 @@ function onRadioInputChange() {
       subscriptionList.children[2].children[2].classList.add("subscription__price--16000");
     } else {
       if (inputTwelve.checked) {
+        subscriptionBlock.children[2].children[0].children[0].classList.add("subscription__bar--twelve");
         subscriptionList.children[0].children[1].textContent = '144 занятий';
         subscriptionList.children[0].children[2].textContent = '50000';
         subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
