@@ -1,6 +1,11 @@
 'use strict';
 var elementForm = document.querySelector('#user-phone-number');
-//var subscriptionPeriod = document.querySelector('.subscription__period');
+var subscriptionPeriod = document.querySelector('.subscription__period');
+
+var subscriptionBlock = document.querySelector('.subscription__wrapper');
+var inputOne = document.querySelector('#one');
+var inputSix = document.querySelector('#six');
+var inputTwelve = document.querySelector('#twelve');
 var timeout = 1000 / 60;
 var durationTime = 1500;
 var multiItemSlider = (function () {
@@ -352,16 +357,54 @@ function scrollTo(to, callback, duration) {
 
 init();
 
-/* Выбор абонемента
+/* Выбор абонемента */
 
-function onFeaturesEnter(input) {
-  return function (evt) {
-    checkEnter(evt, input);
-  };
-}
+
 
 function onRadioInputChange() {
+  var oldSubscriptionList = document.querySelector('.subscription__list');
+  if (oldSubscriptionList) {
+  subscriptionBlock.removeChild(oldSubscriptionList);
+  }
+  var subListTemplate = document.querySelector('#subscription-list-template')
+    .content
+    .querySelector('.subscription__list');
+  var subscriptionList = subListTemplate.cloneNode(true);
 
+  if (inputOne.checked) {
+    subscriptionList.children[0].children[1].textContent = '12 занятий';
+    subscriptionList.children[0].children[2].textContent = '5000';
+    subscriptionList.children[1].children[2].textContent = '1700';
+    subscriptionList.children[2].children[2].textContent = '2700';
+  } else {
+    if (inputSix.checked) {
+      console.log(subscriptionList.children[0].children[1]);
+      subscriptionList.children[0].children[1].textContent = '72 занятий';
+      subscriptionList.children[0].children[2].textContent = '30000';
+      subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
+      subscriptionList.children[0].children[2].classList.add("subscription__price--30000");
+      subscriptionList.children[1].children[2].textContent = '10000';
+      subscriptionList.children[1].children[2].classList.remove("subscription__price--1700");
+      subscriptionList.children[1].children[2].classList.add("subscription__price--10000");
+      subscriptionList.children[2].children[2].textContent = '16000';
+      subscriptionList.children[2].children[2].classList.remove("subscription__price--2700");
+      subscriptionList.children[2].children[2].classList.add("subscription__price--16000");
+    } else {
+      if (inputTwelve.checked) {
+        subscriptionList.children[0].children[1].textContent = '144 занятий';
+        subscriptionList.children[0].children[2].textContent = '50000';
+        subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
+        subscriptionList.children[0].children[2].classList.add("subscription__price--50000");
+        subscriptionList.children[1].children[2].textContent = '20000';
+        subscriptionList.children[1].children[2].classList.remove("subscription__price--1700");
+        subscriptionList.children[1].children[2].classList.add("subscription__price--20000");
+        subscriptionList.children[2].children[2].textContent = '32000';
+        subscriptionList.children[2].children[2].classList.remove("subscription__price--2700");
+        subscriptionList.children[2].children[2].classList.add("subscription__price--32000");
+      }
+    }
+  }
+
+  subscriptionBlock.appendChild(subscriptionList);
 }
-
-subscriptionPeriod.addEventListener('change', onRadioInputChange); */
+subscriptionPeriod.addEventListener('change', onRadioInputChange);

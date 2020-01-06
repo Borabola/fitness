@@ -529,21 +529,21 @@
     </div>
   </footer>
 </div>
-<template id="subscription-list">
+<template id="subscription-list-template">
   <ul class="subscription__list">
-    <li class="subscription__item">
+    <li class="subscription__item subscription__item--month">
       <h3>С тренером</h3>
       <p>12 занятий</p>
       <div class="subscription__price subscription__price--5000">5000<span>₽</span></div>
       <a class="button button--subscription" href="#">Купить абонемент</a>
     </li>
-    <li class="subscription__item">
+    <li class="subscription__item subscription__item--day">
       <h3>Дневной</h3>
       <p>с 8:00 до 17:00 </p>
       <div class="subscription__price subscription__price--1700">1700<span>₽</span></div>
       <a class="button button--subscription" href="#">Купить абонемент</a>
     </li>
-    <li class="subscription__item">
+    <li class="subscription__item subscription__item--full-day">
       <h3>Полный день</h3>
       <p>с 8:00 до 22:00 </p>
       <div class="subscription__price subscription__price--2700">2700<span>₽</span></div>
@@ -551,10 +551,6 @@
     </li>
     <li class="subscription__background-image"></li>
   </ul>
-
-  </div>
-
-
 </template>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/main.js"></script>

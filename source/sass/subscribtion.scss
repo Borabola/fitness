@@ -177,6 +177,36 @@
     @include bg-text;
     content: "2700";
   }
+
+  &--30000::before {
+    @include bg-text;
+    content: "30000";
+  }
+
+  &--10000::before {
+    @include bg-text;
+    content: "10000";
+  }
+
+  &--16000::before {
+    @include bg-text;
+    content: "16000";
+  }
+
+  &--50000::before {
+    @include bg-text;
+    content: "50000";
+  }
+
+  &--20000::before {
+    @include bg-text;
+    content: "20000";
+  }
+
+  &--32000::before {
+    @include bg-text;
+    content: "32000";
+  }
 }
 
 .subscription__background-image {
