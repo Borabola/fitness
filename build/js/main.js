@@ -1,6 +1,8 @@
 'use strict';
 var elementForm = document.querySelector('#user-phone-number');
 //var subscriptionPeriod = document.querySelector('.subscription__period');
+var timeout = 1000 / 60;
+var durationTime = 1500;
 var multiItemSlider = (function () {
 
   function _isElementVisible(element) {
@@ -255,7 +257,7 @@ var maskOptions = {
 };
 var mask1 = IMask(elementForm, maskOptions);
 
-/*Math.easeInOutQuad = function(t, b, c, d) {
+Math.easeInOutQuad = function(t, b, c, d) {
   t /= d / 2;
   if (t < 1) {
     return c / 2 * t * t + b
@@ -350,7 +352,7 @@ function scrollTo(to, callback, duration) {
 
 init();
 
-/* Выбор абонимента
+/* Выбор абонемента
 
 function onFeaturesEnter(input) {
   return function (evt) {
