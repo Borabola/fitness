@@ -244,15 +244,13 @@ var multiItemSlider = (function () {
   }
 }());
 
-/*multiItemSlider('.coach', {
+multiItemSlider('.coach', {
   isCycling: true});
 multiItemSlider('.feedback', {
-  isCycling: true}); */
+  isCycling: true});
 
-multiItemSlider('.coach', {
-  isCycling: false});
-multiItemSlider('.feedback', {
-  isCycling: false});
+//multiItemSlider('.coach');
+//multiItemSlider('.feedback');
 
 /* Маска для номера телефона */
 
