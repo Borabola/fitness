@@ -1,4 +1,5 @@
 'use strict';
+var elementForm = document.querySelector('#user-phone-number');
 var multiItemSlider = (function () {
 
   function _isElementVisible(element) {
@@ -234,6 +235,7 @@ var multiItemSlider = (function () {
 
   }
 }());
+
 /*multiItemSlider('.coach', {
   isCycling: true});
 multiItemSlider('.feedback', {
@@ -243,3 +245,105 @@ multiItemSlider('.coach', {
   isCycling: false});
 multiItemSlider('.feedback', {
   isCycling: false});
+
+/* Маска для номера телефона */
+
+var maskOptions = {
+  mask: '+{7}(000)000-00-00',
+  // lazy: false
+};
+var mask1 = IMask(elementForm, maskOptions);
+Math.easeInOutQuad = function(t, b, c, d) {
+  t /= d / 2;
+  if (t < 1) {
+    return c / 2 * t * t + b
+  }
+  t--;
+  return -c / 2 * (t * (t - 2) - 1) + b;
+};
+
+function isDomElement(obj) {
+  return obj instanceof Element;
+}
+
+function isMouseEvent(obj) {
+  return obj instanceof MouseEvent;
+}
+
+function findScrollingElement(element) { //FIXME Test this too
+  do {
+    if (element.clientHeight < element.scrollHeight || element.clientWidth < element.scrollWidth) {
+      return element;
+    }
+  } while (element === element.parentNode);
+}
+function init() {
+  //Links
+  var anchor1Link  = document.querySelector('.button--presentation');
+
+  //Anchors
+  var anchor1      = document.querySelector('#subscription');
+
+
+  anchor1Link.addEventListener('click', (evt) => { scrollTo(anchor1, evt, durationTime) }, false);
+}
+
+function scrollTopValue(domElement) { //DEBUG
+  return 'scrollTopValue:', domElement.scrollTop;
+}
+function offsetTopValue(domElement) { //DEBUG
+  return 'offsetTopValue:', domElement.offsetTop;
+}
+
+var requestAnimFrame = (function() {
+  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(callback) {
+    window.setTimeout(callback, timeout);
+  };
+})();
+
+function scrollTo(to, callback, duration) {
+
+
+  if (isDomElement(to)) {
+    to = to.offsetTop;
+  }
+
+  function move(amount) {
+    document.documentElement.scrollTop = amount;
+    document.body.parentNode.scrollTop = amount;
+    document.body.scrollTop = amount;
+  }
+
+  function position() {
+    return document.documentElement.offsetTop || document.body.parentNode.offsetTop || document.body.offsetTop;
+  }
+
+  var start = position(),
+    change = to - start,
+    currentTime = 0,
+    increment = 20;
+
+
+  var animateScroll = function() {
+    // increment the time
+    currentTime += increment;
+    // find the value with the quadratic in-out easing function
+    var val = Math.easeInOutQuad(currentTime, start, change, duration);
+    // move the document.body
+    move(val);
+    // do the animation unless its over
+    if (currentTime < duration) {
+      requestAnimFrame(animateScroll);
+    }
+    else {
+      if (callback && typeof(callback) === 'function') {
+        // the animation is done so lets callback
+        callback();
+      }
+    }
+  };
+
+  animateScroll();
+}
+
+init();
