@@ -44,7 +44,8 @@ var multiItemSlider = (function () {
       _html = _mainElement.innerHTML,
       _states = [
         { active: false, minWidth: 0, count: 1 },
-        { active: false, minWidth: 980, count: 2 }
+        { active: false, minWidth: 768, count: 2 },
+        { active: false, minWidth: 1199, count: 4 }
       ],
       _config = {
         isCycling: false, // автоматическая смена слайдов
@@ -63,6 +64,9 @@ var multiItemSlider = (function () {
     _sliderItems.forEach(function (item, index) {
       _items.push({ item: item, position: index, transform: 0 });
     });
+
+    console.log(_mainElement);
+    console.log(_sliderItems);
 
     var _setActive = function () {
       var _index = 0;
@@ -151,6 +155,8 @@ var multiItemSlider = (function () {
 
     // обработчик события click для кнопок "назад" и "вперед"
     var _controlClick = function (e) {
+      console.log("Следующая картинка");
+      //console.log(_wrapperWidth);
       if (e.target.classList.contains('slider-control')) {
         e.preventDefault();
         var direction = e.target.classList.contains('slider-control--right') ? 'right' : 'left';
@@ -170,23 +176,36 @@ var multiItemSlider = (function () {
       }
     };
 
+
     var _refresh = function () {
+      console.log("Обновить");
       clearInterval(_interval);
       _mainElement.innerHTML = _html;
-      _sliderWrapper = _mainElement.querySelector('.slider-wrapper');
-      _sliderItems = _mainElement.querySelectorAll('.slider__item');
+      //_sliderWrapper = _mainElement.querySelector('.slider-wrapper');
+      //_sliderItems = _mainElement.querySelectorAll('.slider__item');
       _sliderControls = _mainElement.querySelectorAll('.slider-control');
       _sliderControlLeft = _mainElement.querySelector('.slider-control--left');
       _sliderControlRight = _mainElement.querySelector('.slider-control--right');
       _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width);
-      _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width);
+      if (_sliderItems[0]) {
+        _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width);
+      }
       _positionLeftItem = 0;
       _transform = 0;
       _step = _itemWidth / _wrapperWidth * 100;
-      _items = [];
-      _sliderItems.forEach(function (item, index) {
+      //_items = [];
+
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Dom обновился');
+        _sliderItems.forEach(function (item, index) {
+          _items.push({ item: item, position: index, transform: 0 });
+        });
+      }, false);
+      /*_sliderItems.forEach(function (item, index) {
         _items.push({ item: item, position: index, transform: 0 });
-      });
+      }); */
+      console.log(_mainElement);
+      console.log(_sliderItems);
     };
 
     var _setUpListeners = function () {
@@ -205,14 +224,18 @@ var multiItemSlider = (function () {
         var
           _index = 0,
           width = parseFloat(document.body.clientWidth);
+        console.log("изменение размеров экрана");
+        console.log(width);
         _states.forEach(function (item, index, arr) {
           if (width >= _states[index].minWidth)
             _index = index;
         });
-        if (_index !== _getActive()) {
+        /*if (_index !== _getActive()) {
           _setActive();
           _refresh();
-        }
+        } */
+        _setActive();
+        _refresh();
       });
     };
 
@@ -249,8 +272,8 @@ var multiItemSlider = (function () {
 multiItemSlider('.feedback', {
   isCycling: true});*/
 
-multiItemSlider('.coach');
-multiItemSlider('.feedback');
+multiItemSlider('.coach__slider-btn-container');
+multiItemSlider('.feedback__slider-container');
 
 /* Маска для номера телефона */
 
@@ -360,6 +383,25 @@ init();
 
 
 function onRadioInputChange() {
+  var OneMonthPrice = {
+    lessons: '12 занятий',
+    coach: '5000',
+    day: '1700',
+    fullday: '2700',
+  };
+  var SixMonthPrice = {
+    lessons: '72 занятий',
+    coach: '30000',
+    day: '10000',
+    fullday: '16000',
+  };
+  var TwelveMonthPrice = {
+    lessons: '72 занятий',
+    coach: '30000',
+    day: '10000',
+    fullday: '16000',
+  };
+
   var oldSubscriptionList = document.querySelector('.subscription__list');
   if (oldSubscriptionList) {
   subscriptionBlock.removeChild(oldSubscriptionList);
@@ -376,37 +418,37 @@ function onRadioInputChange() {
     if (subscriptionBlock.children[2].children[0].children[0].classList.contains('subscription__bar--twelve')) {
       subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--twelve');
     }
-    subscriptionList.children[0].children[1].textContent = '12 занятий';
-    subscriptionList.children[0].children[2].textContent = '5000';
-    subscriptionList.children[1].children[2].textContent = '1700';
-    subscriptionList.children[2].children[2].textContent = '2700';
+    subscriptionList.children[0].children[1].textContent = OneMonthPrice.lessons;
+    subscriptionList.children[0].children[2].textContent = OneMonthPrice.coach;
+    subscriptionList.children[1].children[2].textContent = OneMonthPrice.day;
+    subscriptionList.children[2].children[2].textContent = OneMonthPrice.fullday;
   } else {
     if (inputSix.checked) {
       subscriptionBlock.children[2].children[0].children[0].classList.add("subscription__bar--six");
       if (subscriptionBlock.children[2].children[0].children[0].classList.contains('subscription__bar--twelve')) {
         subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--twelve');
       }
-      subscriptionList.children[0].children[1].textContent = '72 занятий';
-      subscriptionList.children[0].children[2].textContent = '30000';
+      subscriptionList.children[0].children[1].textContent = SixMonthPrice.lessons;
+      subscriptionList.children[0].children[2].textContent = SixMonthPrice.coach;
       subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
       subscriptionList.children[0].children[2].classList.add("subscription__price--30000");
-      subscriptionList.children[1].children[2].textContent = '10000';
+      subscriptionList.children[1].children[2].textContent = SixMonthPrice.day;
       subscriptionList.children[1].children[2].classList.remove("subscription__price--1700");
       subscriptionList.children[1].children[2].classList.add("subscription__price--10000");
-      subscriptionList.children[2].children[2].textContent = '16000';
+      subscriptionList.children[2].children[2].textContent = SixMonthPrice.fullday;
       subscriptionList.children[2].children[2].classList.remove("subscription__price--2700");
       subscriptionList.children[2].children[2].classList.add("subscription__price--16000");
     } else {
       if (inputTwelve.checked) {
         subscriptionBlock.children[2].children[0].children[0].classList.add("subscription__bar--twelve");
-        subscriptionList.children[0].children[1].textContent = '144 занятий';
-        subscriptionList.children[0].children[2].textContent = '50000';
+        subscriptionList.children[0].children[1].textContent = TwelveMonthPrice.lessons;
+        subscriptionList.children[0].children[2].textContent = TwelveMonthPrice.coach;
         subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
         subscriptionList.children[0].children[2].classList.add("subscription__price--50000");
-        subscriptionList.children[1].children[2].textContent = '20000';
+        subscriptionList.children[1].children[2].textContent = TwelveMonthPrice.day;
         subscriptionList.children[1].children[2].classList.remove("subscription__price--1700");
         subscriptionList.children[1].children[2].classList.add("subscription__price--20000");
-        subscriptionList.children[2].children[2].textContent = '32000';
+        subscriptionList.children[2].children[2].textContent = TwelveMonthPrice.fullday;
         subscriptionList.children[2].children[2].classList.remove("subscription__price--2700");
         subscriptionList.children[2].children[2].classList.add("subscription__price--32000");
       }
