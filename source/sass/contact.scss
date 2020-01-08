@@ -201,10 +201,11 @@
 
   .contact__form-form {
     & div {
-    width: 43.6%;
-  }
+      width: 43.6%;
+    }
+
     & input {
-    margin-bottom: 28px;
+      margin-bottom: 28px;
     }
   }
 
@@ -266,6 +267,7 @@
     & div {
       width: 100%;
     }
+
     & input {
       margin-bottom: 34px;
     }
@@ -284,7 +286,6 @@
   }
 
   .contact__first-column {
-
     &::before,
     &::after {
       display: none;

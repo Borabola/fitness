@@ -17,7 +17,6 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: $primary-color;
-
   }
 
   & li {
@@ -42,7 +41,6 @@
 
 .feedback__slider-wrapper {
   display: flex;
-
 }
 
 .feedback__slider-item {
@@ -73,7 +71,6 @@
     left: 50%;
     width: 216px;
     height: auto;
-    -webkit-transform: translate(-50%);
     transform: translate(-50%, -50%);
   }
 }
@@ -162,7 +159,6 @@
   .feedback__slider-control--right {
     right: 0;
   }
-
 }
 
 @media (max-width: $mobile-width) {

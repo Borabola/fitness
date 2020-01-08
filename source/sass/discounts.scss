@@ -254,14 +254,11 @@
   .discounts__picture {
     width: 100%;
     height: 93.43vw;
+    background-position: 50% 0;
   }
 
   .discounts__list {
     flex-direction: column;
-  }
-
-  .discounts__picture {
-    background-position: 50% 0;
   }
 
   .discounts__free-month,
