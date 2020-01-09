@@ -103,9 +103,10 @@
 
   .page-footer__menu {
     display: flex;
-    width: 108%;
+    width: 79%;
     height: 104px;
     flex-direction: column;
+    align-content: space-between;
     flex-wrap: wrap;
     font-size: 16px;
     line-height: 19px;

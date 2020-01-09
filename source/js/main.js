@@ -181,31 +181,28 @@ var multiItemSlider = (function () {
       console.log("Обновить");
       clearInterval(_interval);
       _mainElement.innerHTML = _html;
-      //_sliderWrapper = _mainElement.querySelector('.slider-wrapper');
-      //_sliderItems = _mainElement.querySelectorAll('.slider__item');
+      _sliderWrapper = _mainElement.querySelector('.slider-wrapper');
+      _sliderItems = _mainElement.querySelectorAll('.slider__item');
       _sliderControls = _mainElement.querySelectorAll('.slider-control');
       _sliderControlLeft = _mainElement.querySelector('.slider-control--left');
       _sliderControlRight = _mainElement.querySelector('.slider-control--right');
       _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width);
-      if (_sliderItems[0]) {
-        _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width);
-      }
+      _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width);
       _positionLeftItem = 0;
       _transform = 0;
       _step = _itemWidth / _wrapperWidth * 100;
-      //_items = [];
+      _items = [];
 
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('Dom обновился');
-        _sliderItems.forEach(function (item, index) {
-          _items.push({ item: item, position: index, transform: 0 });
-        });
-      }, false);
+      _sliderItems.forEach(function (item, index) {
+        _items.push({ item: item, position: index, transform: 0 });
+      });
+
       /*_sliderItems.forEach(function (item, index) {
         _items.push({ item: item, position: index, transform: 0 });
       }); */
       console.log(_mainElement);
-      console.log(_sliderItems);
+      console.log(_sliderItems[0]);
+      console.log(getComputedStyle(_sliderItems[0]).width);
     };
 
     var _setUpListeners = function () {
@@ -396,10 +393,10 @@ function onRadioInputChange() {
     fullday: '16000',
   };
   var TwelveMonthPrice = {
-    lessons: '72 занятий',
-    coach: '30000',
-    day: '10000',
-    fullday: '16000',
+    lessons: '144 занятий',
+    coach: '50000',
+    day: '20000',
+    fullday: '32000',
   };
 
   var oldSubscriptionList = document.querySelector('.subscription__list');
@@ -419,9 +416,9 @@ function onRadioInputChange() {
       subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--twelve');
     }
     subscriptionList.children[0].children[1].textContent = OneMonthPrice.lessons;
-    subscriptionList.children[0].children[2].textContent = OneMonthPrice.coach;
-    subscriptionList.children[1].children[2].textContent = OneMonthPrice.day;
-    subscriptionList.children[2].children[2].textContent = OneMonthPrice.fullday;
+    subscriptionList.children[0].children[2].insertAdjacentHTML("afterbegin", OneMonthPrice.coach + '<span>₽</span>');
+    subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", OneMonthPrice.day + '<span>₽</span>');
+    subscriptionList.children[2].children[2].insertAdjacentHTML("afterbegin", OneMonthPrice.fullday + '<span>₽</span>');
   } else {
     if (inputSix.checked) {
       subscriptionBlock.children[2].children[0].children[0].classList.add("subscription__bar--six");
@@ -429,26 +426,26 @@ function onRadioInputChange() {
         subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--twelve');
       }
       subscriptionList.children[0].children[1].textContent = SixMonthPrice.lessons;
-      subscriptionList.children[0].children[2].textContent = SixMonthPrice.coach;
+      subscriptionList.children[0].children[2].insertAdjacentHTML("afterbegin", SixMonthPrice.coach + '<span>₽</span>');
       subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
       subscriptionList.children[0].children[2].classList.add("subscription__price--30000");
-      subscriptionList.children[1].children[2].textContent = SixMonthPrice.day;
+      subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", SixMonthPrice.day + '<span>₽</span>');
       subscriptionList.children[1].children[2].classList.remove("subscription__price--1700");
       subscriptionList.children[1].children[2].classList.add("subscription__price--10000");
-      subscriptionList.children[2].children[2].textContent = SixMonthPrice.fullday;
+      subscriptionList.children[2].children[2].insertAdjacentHTML("afterbegin", SixMonthPrice.fullday + '<span>₽</span>');
       subscriptionList.children[2].children[2].classList.remove("subscription__price--2700");
       subscriptionList.children[2].children[2].classList.add("subscription__price--16000");
     } else {
       if (inputTwelve.checked) {
         subscriptionBlock.children[2].children[0].children[0].classList.add("subscription__bar--twelve");
         subscriptionList.children[0].children[1].textContent = TwelveMonthPrice.lessons;
-        subscriptionList.children[0].children[2].textContent = TwelveMonthPrice.coach;
+        subscriptionList.children[0].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.coach + '<span>₽</span>');
         subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
         subscriptionList.children[0].children[2].classList.add("subscription__price--50000");
-        subscriptionList.children[1].children[2].textContent = TwelveMonthPrice.day;
+        subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.day + '<span>₽</span>');
         subscriptionList.children[1].children[2].classList.remove("subscription__price--1700");
         subscriptionList.children[1].children[2].classList.add("subscription__price--20000");
-        subscriptionList.children[2].children[2].textContent = TwelveMonthPrice.fullday;
+        subscriptionList.children[2].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.fullday + '<span>₽</span>');
         subscriptionList.children[2].children[2].classList.remove("subscription__price--2700");
         subscriptionList.children[2].children[2].classList.add("subscription__price--32000");
       }
