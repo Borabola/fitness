@@ -8,269 +8,76 @@ var inputSix = document.querySelector('#six');
 var inputTwelve = document.querySelector('#twelve');
 var timeout = 1000 / 60;
 var durationTime = 1500;
-var multiItemSlider = (function () {
 
-  function _isElementVisible(element) {
-    var rect = element.getBoundingClientRect(),
-      vWidth = window.innerWidth || doc.documentElement.clientWidth,
-      vHeight = window.innerHeight || doc.documentElement.clientHeight,
-      elemFromPoint = function (x, y) { return document.elementFromPoint(x, y) };
-    if (rect.right < 0 || rect.bottom < 0
-      || rect.left > vWidth || rect.top > vHeight)
-      return false;
-    return (
-      element.contains(elemFromPoint(rect.left, rect.top))
-      || element.contains(elemFromPoint(rect.right, rect.top))
-      || element.contains(elemFromPoint(rect.right, rect.bottom))
-      || element.contains(elemFromPoint(rect.left, rect.bottom))
-    );
-  }
+var slider = (function () {
+  return function (selector) {
+    var mainElement = document.querySelector(selector); // основный элемент блока
+    var sliderWrapper = mainElement.querySelector('.slider-wrapper');
+    var sliderItems = mainElement.querySelectorAll('.slider-item'); // элементы (.slider-item)
+    //var sliderControls = mainElement.querySelectorAll('.slider-control'); // элементы управления
+    //var sliderControlLeft = mainElement.querySelector('.slider-control--left'); // кнопка "LEFT"
+    //var sliderControlRight = mainElement.querySelector('.slider-control--right'); // кнопка "RIGHT"
+    var wrapperWidth = parseFloat(getComputedStyle(sliderWrapper).width); // ширина обёртки
+    var itemWidth = parseFloat(getComputedStyle(sliderItems[0]).width);
+    var photoQuantity = Math.round(wrapperWidth / itemWidth);
+    var maxPosition = Math.ceil(sliderItems.length / photoQuantity) - 1;
+    var position = 0;
+    var transform = 0;
+    var step = 100; // шаг в 100% смещает на всю ширину обертки
 
-  return function (selector, config) {
-    var
-      _mainElement = document.querySelector(selector), // основный элемент блока
-      _sliderWrapper = _mainElement.querySelector('.slider-wrapper'), // обертка для .slider-item
-      _sliderItems = _mainElement.querySelectorAll('.slider-item'), // элементы (.slider-item)
-      _sliderControls = _mainElement.querySelectorAll('.slider-control'), // элементы управления
-      _sliderControlLeft = _mainElement.querySelector('.slider-control--left'), // кнопка "LEFT"
-      _sliderControlRight = _mainElement.querySelector('.slider-control--right'), // кнопка "RIGHT"
-      _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width), // ширина обёртки
-      _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width), // ширина одного элемента
-      _positionLeftItem = 0, // позиция левого активного элемента
-      _transform = 0, // значение транфсофрмации .slider_wrapper
-      _step = _itemWidth / _wrapperWidth * 100, // величина шага (для трансформации)
-      _items = [], // массив элементов
-      _interval = 0,
-      _html = _mainElement.innerHTML,
-      _states = [
-        { active: false, minWidth: 0, count: 1 },
-        { active: false, minWidth: 768, count: 2 },
-        { active: false, minWidth: 1199, count: 4 }
-      ],
-      _config = {
-        isCycling: false, // автоматическая смена слайдов
-        direction: 'right', // направление смены слайдов
-        interval: 5000, // интервал между автоматической сменой слайдов
-        pause: true // устанавливать ли паузу при поднесении курсора к слайдеру
-      };
-
-    for (var key in config) {
-      if (key in _config) {
-        _config[key] = config[key];
-      }
-    }
-
-    // наполнение массива _items
-    _sliderItems.forEach(function (item, index) {
-      _items.push({ item: item, position: index, transform: 0 });
-    });
-
-    console.log(_mainElement);
-    console.log(_sliderItems);
-
-    var _setActive = function () {
-      var _index = 0;
-      var width = parseFloat(document.body.clientWidth);
-      _states.forEach(function (item, index, arr) {
-        _states[index].active = false;
-        if (width >= _states[index].minWidth)
-          _index = index;
-      });
-      _states[_index].active = true;
-    };
-
-    var _getActive = function () {
-      var _index;
-      _states.forEach(function (item, index, arr) {
-        if (_states[index].active) {
-          _index = index;
-        }
-      });
-      return _index;
-    };
-
-    var position = {
-      getItemMin: function () {
-        var indexItem = 0;
-        _items.forEach(function (item, index) {
-          if (item.position < _items[indexItem].position) {
-            indexItem = index;
-          }
-        });
-        return indexItem;
-      },
-      getItemMax: function () {
-        var indexItem = 0;
-        _items.forEach(function (item, index) {
-          if (item.position > _items[indexItem].position) {
-            indexItem = index;
-          }
-        });
-        return indexItem;
-      },
-      getMin: function () {
-        return _items[position.getItemMin()].position;
-      },
-      getMax: function () {
-        return _items[position.getItemMax()].position;
-      }
-    };
-
-    var _transformItem = function (direction) {
-      var nextItem;
-        if (!_isElementVisible(_mainElement)) {
-        return;
-      }
+    var transformItem = function (direction) {
       if (direction === 'right') {
-        _positionLeftItem++;
-        if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
-          nextItem = position.getItemMin();
-          _items[nextItem].position = position.getMax() + 1;
-          _items[nextItem].transform += _items.length * 100;
-          _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
+        //sliderControlLeft.style.display = "block";
+        if (position < maxPosition) {
+          position ++;
+          transform -= step
+        } else {
+          //  sliderControlRight.style.display = "none";
         }
-        _transform -= _step;
       }
+
       if (direction === 'left') {
-        _positionLeftItem--;
-        if (_positionLeftItem < position.getMin()) {
-          nextItem = position.getItemMax();
-          _items[nextItem].position = position.getMin() - 1;
-          _items[nextItem].transform -= _items.length * 100;
-          _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
+        // sliderControlRight.style.display = "block";
+        if (position > 0) {
+          position --;
+          transform += step
+        } else {
+          // sliderControlLeft.style.display = "none";
         }
-        _transform += _step;
       }
-      _sliderWrapper.style.transform = 'translateX(' + _transform + '%)';
+
+      sliderWrapper.style.transform = 'translateX(' + transform + '%)';
+
     };
 
-    var _cycle = function (direction) {
-      if (!_config.isCycling) {
-        return;
-      }
-      _interval = setInterval(function () {
-        _transformItem(direction);
-      }, _config.interval);
-    };
 
     // обработчик события click для кнопок "назад" и "вперед"
-    var _controlClick = function (e) {
-      console.log("Следующая картинка");
-      //console.log(_wrapperWidth);
-      if (e.target.classList.contains('slider-control')) {
-        e.preventDefault();
-        var direction = e.target.classList.contains('slider-control--right') ? 'right' : 'left';
-        _transformItem(direction);
-        clearInterval(_interval);
-        _cycle(_config.direction);
+    var onControlClick = function (evt) {
+      if (evt.target.classList.contains('slider-control')) {
+        evt.preventDefault();
+        var direction = evt.target.classList.contains('slider-control--right') ? 'right' : 'left';
+        transformItem(direction);
       }
     };
 
-    // обработка события изменения видимости страницы
-    var _handleVisibilityChange = function () {
-      if (document.visibilityState === "hidden") {
-        clearInterval(_interval);
-      } else {
-        clearInterval(_interval);
-        _cycle(_config.direction);
-      }
+    var onWindowResize = function () {
+      wrapperWidth = parseFloat(getComputedStyle(sliderWrapper).width); // ширина обёртки
+      itemWidth = parseFloat(getComputedStyle(sliderItems[0]).width);
+      photoQuantity = Math.round(wrapperWidth / itemWidth);
+      maxPosition = Math.ceil(sliderItems.length / photoQuantity) - 1;
+      position = 0;
+      sliderWrapper.style.transform = 'translateX(' + 0 + '%)';
     };
 
-
-    var _refresh = function () {
-      console.log("Обновить");
-      clearInterval(_interval);
-      _mainElement.innerHTML = _html;
-      _sliderWrapper = _mainElement.querySelector('.slider-wrapper');
-      _sliderItems = _mainElement.querySelectorAll('.slider__item');
-      _sliderControls = _mainElement.querySelectorAll('.slider-control');
-      _sliderControlLeft = _mainElement.querySelector('.slider-control--left');
-      _sliderControlRight = _mainElement.querySelector('.slider-control--right');
-      _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width);
-      _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width);
-      _positionLeftItem = 0;
-      _transform = 0;
-      _step = _itemWidth / _wrapperWidth * 100;
-      _items = [];
-
-      _sliderItems.forEach(function (item, index) {
-        _items.push({ item: item, position: index, transform: 0 });
-      });
-
-      /*_sliderItems.forEach(function (item, index) {
-        _items.push({ item: item, position: index, transform: 0 });
-      }); */
-      console.log(_mainElement);
-      console.log(_sliderItems[0]);
-      console.log(getComputedStyle(_sliderItems[0]).width);
-    };
-
-    var _setUpListeners = function () {
-      _mainElement.addEventListener('click', _controlClick);
-      if (_config.pause && _config.isCycling) {
-        _mainElement.addEventListener('mouseenter', function () {
-          clearInterval(_interval);
-        });
-        _mainElement.addEventListener('mouseleave', function () {
-          clearInterval(_interval);
-          _cycle(_config.direction);
-        });
-      }
-      document.addEventListener('visibilitychange', _handleVisibilityChange, false);
-      window.addEventListener('resize', function () {
-        var
-          _index = 0,
-          width = parseFloat(document.body.clientWidth);
-        console.log("изменение размеров экрана");
-        console.log(width);
-        _states.forEach(function (item, index, arr) {
-          if (width >= _states[index].minWidth)
-            _index = index;
-        });
-        /*if (_index !== _getActive()) {
-          _setActive();
-          _refresh();
-        } */
-        _setActive();
-        _refresh();
-      });
-    };
-
-    // инициализация
-    _setUpListeners();
-    if (document.visibilityState === "visible") {
-      _cycle(_config.direction);
-    }
-    _setActive();
-
-    return {
-      right: function () { // метод right
-        _transformItem('right');
-      },
-      left: function () { // метод left
-        _transformItem('left');
-      },
-      stop: function () { // метод stop
-        _config.isCycling = false;
-        clearInterval(_interval);
-      },
-      cycle: function () { // метод cycle
-        _config.isCycling = true;
-        clearInterval(_interval);
-        _cycle();
-      }
-    }
+    mainElement.addEventListener('click', onControlClick);
+    window.addEventListener('resize', onWindowResize);
 
   }
 }());
 
-/*multiItemSlider('.coach', {
-  isCycling: true});
-multiItemSlider('.feedback', {
-  isCycling: true});*/
+slider('.coach__slider-btn-container');
+slider('.feedback__slider-container');
 
-multiItemSlider('.coach__slider-btn-container');
-multiItemSlider('.feedback__slider-container');
 
 /* Маска для номера телефона */
 
@@ -401,7 +208,7 @@ function onRadioInputChange() {
 
   var oldSubscriptionList = document.querySelector('.subscription__list');
   if (oldSubscriptionList) {
-  subscriptionBlock.removeChild(oldSubscriptionList);
+    subscriptionBlock.removeChild(oldSubscriptionList);
   }
   var subListTemplate = document.querySelector('#subscription-list-template')
     .content
