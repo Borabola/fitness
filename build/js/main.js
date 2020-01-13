@@ -32,17 +32,17 @@ var slider = (function () {
           position ++;
           transform -= step
         } else {
-        //  sliderControlRight.style.display = "none";
+          //  sliderControlRight.style.display = "none";
         }
       }
 
       if (direction === 'left') {
-       // sliderControlRight.style.display = "block";
+        // sliderControlRight.style.display = "block";
         if (position > 0) {
           position --;
           transform += step
         } else {
-         // sliderControlLeft.style.display = "none";
+          // sliderControlLeft.style.display = "none";
         }
       }
 
