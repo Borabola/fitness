@@ -7,7 +7,7 @@
   width: 96.7%;
   max-width: $desktop-width;
   padding-top: 120px;
-  padding-bottom: 90px;
+  padding-bottom: 76px;
   margin: 0 auto;
 
   & h2 {
@@ -88,7 +88,8 @@
 .subscription__list {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  //justify-content: space-between;
   list-style: none;
 }
 
@@ -99,6 +100,8 @@
   min-height: 448px;
   padding-top: 62px;
   padding-bottom: 67px;
+  margin-right: 3.5%;
+  margin-bottom: 43px;
   background-color: $second-color;
   text-align: center;
   z-index: 2;
@@ -109,6 +112,10 @@
     border: 7px solid;
     border-image-source: (linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%));
     border-image-slice: 1;
+  }
+
+  &:nth-child(3n) {
+    margin-right: 0;
   }
 
   /* &:hover > a.button.button--subscription {
@@ -290,6 +297,7 @@
     padding-top: 67px;
     padding-bottom: 67px;
     margin-bottom: 36px;
+    margin-right: 0;
 
     &:hover {
       padding-top: 60px;
