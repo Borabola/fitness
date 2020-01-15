@@ -256,6 +256,10 @@
   }
 }
 
+#subscription-list-template {
+  display: none;
+}
+
 @media (min-width: 1366px) {
   .subscription__item {
     position: relative;
