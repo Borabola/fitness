@@ -103,7 +103,8 @@
   cursor: pointer;
   //transform: translateY(-180%);
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.5;
   }
 }

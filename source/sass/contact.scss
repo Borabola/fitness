@@ -56,6 +56,12 @@
     border: none;
     border-bottom: 1px solid $border-color;
     background-color: $bg-dark;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-bottom: 1px solid $second-color;
+    }
   }
 
 
@@ -69,7 +75,9 @@
     z-index: 1;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       color: $second-color-active;
     }
   }
@@ -130,7 +138,8 @@
     text-decoration: none;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $primary-color-active;
     }
   }
