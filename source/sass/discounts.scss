@@ -47,6 +47,7 @@
   & a {
     display: block;
     width: fit-content;
+    max-width: 70px;
     margin-top: auto;
     margin-bottom: 10px;
     font-weight: 700;
@@ -121,6 +122,8 @@
 
 .discounts__item {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding: 20px 25px;
   margin-right: 7px;
@@ -184,11 +187,15 @@
 
   .discounts__year {
     width: 41%;
+
+    & a {
+      max-width: 80px;
+    }
   }
 
   .discounts__picture {
     width: 59%;
-    height: 60.25vw;
+    height: 60vw;
   }
 
   .discounts__list {
