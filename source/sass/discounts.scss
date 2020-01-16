@@ -39,6 +39,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
   width: 50%;
   padding: 34px 35px 35px 45px;
   background-color: $bg_bright;
@@ -47,7 +48,7 @@
   & a {
     display: block;
     width: fit-content;
-    max-width: 70px;
+    //max-width: 70px;
     margin-top: auto;
     margin-bottom: 10px;
     font-weight: 700;
@@ -124,6 +125,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   width: 100%;
   padding: 20px 25px;
   margin-right: 7px;
@@ -188,9 +190,9 @@
   .discounts__year {
     width: 41%;
 
-    & a {
+    /*& a {
       max-width: 80px;
-    }
+    }*/
   }
 
   .discounts__picture {

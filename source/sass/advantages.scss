@@ -178,25 +178,20 @@
 }
 
 .advantages__item--equipment {
-  grid-area: equipment;
-  box-sizing: content-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 52.5%;
-  height: 66%;
-  padding: 34px 30px 35px 30px;
-  /* margin-top: 6px; */
-  margin-right: 3px;
-  margin-left: 0;
-  display: flex;
-  flex-direction: column;
-  //height: 237px; //17.2vw;
-  background-color: #1c3374;
-  color: $second-color;
-  text-align: center;
-  //border-right: 50px solid $bg_light;
+    grid-area: equipment;
+    -webkit-box-sizing: content-box;
+    box-sizing: border-box;
+    width: 70%;
+    height: 85%;
+    padding: 34px 30px 35px;
+    margin: 27px auto 50px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    background-color: #1c3374;
+    color: #fff;
+    text-align: center;
 
   & p {
     font-size: 16px;
