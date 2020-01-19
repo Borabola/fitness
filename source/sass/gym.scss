@@ -129,8 +129,6 @@
     position: absolute;
     top: calc(50% - 4px);
     right: calc(50% - 16px);
-    width: 1px;
-    height: 1px;
     border: 7px solid transparent;
     border-left: 12px solid $second-color-active;
     z-index: 3;
@@ -142,8 +140,6 @@
     position: absolute;
     top: calc(50% - 4px);
     right: calc(50% - 16px);
-    width: 1px;
-    height: 1px;
     border: 7px solid transparent;
     border-left: 12px solid $second-color;
     z-index: 3;

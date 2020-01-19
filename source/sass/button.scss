@@ -94,7 +94,7 @@
     }
 
     &--subscription {
-      padding: 24px 43px;
+      padding: 25px 45px;
       margin: 33px auto 0 auto;
 
       &:hover,
@@ -127,7 +127,7 @@
 
   .subscription__item:hover > .button--subscription,
   .subscription__item:focus > .button--subscription {
-    padding: 26px 44px;
+    padding: 25px 45px;
     margin-top: 33px;
     color: $second-color;
     background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
