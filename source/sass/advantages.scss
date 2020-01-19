@@ -276,6 +276,10 @@
       padding: 20px 0 20px 0;
       margin-right: 20px;
       order: 4;
+
+      & .advantages__number {
+        margin-right: 27px;
+      }
     }
 
     &--equipment {
@@ -396,10 +400,11 @@
 
     &--area {
       padding-left: 0;
+      padding-bottom: 17px;
 
       & .advantages__text {
         width: 73%;
-        padding: 0 30px 0 36px;
+        padding: 0 35px 0 36px;
       }
     }
 
@@ -418,12 +423,12 @@
       box-sizing: border-box;
       width: 100%;
       margin: 27px auto;
-      padding: 20px 25px 42px;
+      padding: 20px 25px 43px;
 
       & span {
         padding-right: 0;
-        margin-top: -25px;
-        margin-bottom: 10px;
+        margin-top: -27px;
+        margin-bottom: 9px;
       }
 
       & .advantages__number p {
@@ -449,10 +454,15 @@
       & .advantages__number {
         margin-top: 3px;
         margin-bottom: 8px;
+        margin-right: 0;
       }
 
       & .advantages__text {
         width: 93%;
+
+        & p {
+          padding-left: 4px;
+        }
       }
     }
   }
@@ -475,5 +485,6 @@
 
   .advantages__item--area .advantages__number {
     margin-right: 0;
+    margin-bottom: 8px;
   }
 }

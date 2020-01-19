@@ -215,7 +215,7 @@
 
     & a {
       margin-top: 74px;
-      margin-bottom: 9px;
+      margin-bottom: 7px;
     }
 
     &:not(:last-child) {
@@ -258,10 +258,11 @@
 
   .discounts__unlimited {
     flex-direction: column;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
   }
 
   .discounts__year {
+    align-items: center;
     width: 100%;
     padding: 34px 45px 26px;
     text-align: center;
@@ -296,7 +297,7 @@
     text-align: center;
 
     & a {
-      margin: 26px auto 8px;
+      margin: 27px auto 8px;
     }
 
     & p {
@@ -306,6 +307,10 @@
     &:not(:last-child) {
       margin-bottom: 30px;
     }
+  }
+
+  .discounts__item--20 a {
+    margin: 25px auto 8px;
   }
 
   .discounts__item--20 p,
