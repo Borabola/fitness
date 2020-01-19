@@ -106,8 +106,9 @@
 
 .promo__blue {
   display: flex;
+  align-items: center;
   width: 56.9%;
-  height: 500px;
+  min-height: 500px;
   background-color: #010245;
 }
 
@@ -203,7 +204,7 @@
   }
 
   .promo__blue {
-    height: 38.02vw;
+    min-height: 38.02vw;
     overflow: hidden;
     //height: fit-content;
   }
@@ -264,7 +265,7 @@
   .promo__blue {
     position: relative;
     width: 100%;
-    height: 91.25vw;
+    min-height: 91.25vw;
     overflow: hidden;
 
     & img,
