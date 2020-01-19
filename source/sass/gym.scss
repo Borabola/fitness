@@ -292,6 +292,14 @@
     }
   }
 
+  .gym__video--overlay::before {
+    background-position: 50% 50%;
+  }
+
+  .gym__button {
+    bottom: calc(50% - 31px);
+  }
+
   .gym__button-container {
     position: absolute;
     width: 72px;

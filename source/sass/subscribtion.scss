@@ -93,6 +93,10 @@
   list-style: none;
 }
 
+.subscription__list--hidden {
+  display: none;
+}
+
 .subscription__item {
   //position: relative;
   box-sizing: border-box;
@@ -226,7 +230,8 @@
 
 .subscription__background-image {
   position: absolute;
-  bottom: -190px;
+  bottom: -148px;
+  //bottom: -190px;
   //left: calc(98.35vw - 184px);
   //width: calc(184px + 1.65vw);
   //left: calc(95vw - 184px);
@@ -266,7 +271,8 @@
   }
 
   .subscription__background-image {
-    bottom: -190px;
+    bottom: -148px;
+    //bottom: -190px;
     left: calc(50% + 410px);
     width: calc(50vw - 410px);
     //max-width: 470px;
@@ -359,6 +365,7 @@
     margin: 0 auto;
 
     & h2 {
+      margin-left: 4px;
       margin-bottom: 21px;
       font-size: 32px;
       line-height: 32px;
@@ -367,6 +374,7 @@
 
   .subscription__period {
     width: 100%;
+    margin-left: 2px;
   }
 
   .subscription__period label {

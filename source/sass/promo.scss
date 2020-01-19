@@ -11,6 +11,7 @@
 }
 
 .promo__red {
+  display: flex;
   width: 43.1%;
   background-color: #ed0233;
 
@@ -21,7 +22,11 @@
 }
 
 .promo__red-wrapper {
-  padding: 88px 77px 85px;
+  width: 68.9%;
+  margin: 0 auto;
+  padding-top: 88px;
+  padding-bottom: 85px;
+  //padding: 88px 77px 85px;
   display: flex;
   flex-direction: column;
 }
@@ -35,6 +40,7 @@
 
 .promo__name {
   width: 60%;
+  margin-right: 35px;
   font-family: "Bebas Neue Cyrillic", cursive;
   font-size: 90px;
   line-height: 90px;
@@ -99,6 +105,7 @@
 }
 
 .promo__blue {
+  display: flex;
   width: 56.9%;
   height: 500px;
   background-color: #010245;
@@ -120,6 +127,8 @@
   }
 
   .promo__name {
+    margin-right: 30px;
+    margin-top: 2px;
     font-size: 52px;
     line-height: 52px;
   }
@@ -134,9 +143,13 @@
     }
   }
 
+  .promo__event-block {
+    margin-top: 3px;
+  }
+
   .promo__date-container {
     margin-top: -5px;
-    margin-left: 3px;
+    margin-right: 3px;
   }
 
   .promo__date-date {
@@ -153,6 +166,13 @@
 
   .promo__date-value {
     padding-top: 2px;
+  }
+
+  .promo__month {
+    font-size: 10px;
+    line-height: 15px;
+    margin-top: 1px;
+    margin-bottom: 3px;
   }
 
   .promo__time-container {
@@ -203,16 +223,26 @@
 
   .promo__red-wrapper {
     width: 100%;
-    padding: 50px 45px 51px 42px;
+    padding: 48px 45px 51px 42px;
     box-sizing: border-box;
   }
 
   .promo__name {
     width: 50%;
+    margin-top: 3px;
+    margin-left: 2px;
   }
 
   .promo__event-block {
     margin-right: 0;
+  }
+
+  .promo__time-container {
+    padding: 0 0 0 4px;
+  }
+
+  .promo__date-value {
+    padding-top: 0;
   }
 
   .promo__date-container {
@@ -222,6 +252,7 @@
   }
 
   .promo__month {
+    margin-bottom: 0;
     font-size: 10px;
     line-height: 15px;
   }

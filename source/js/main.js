@@ -215,6 +215,10 @@ function onRadioInputChange() {
     .querySelector('.subscription__list');
   var subscriptionList = subListTemplate.cloneNode(true);
 
+  if (subscriptionList.classList.contains('subscription__list--hidden')) {
+    subscriptionList.classList.remove('subscription__list--hidden');
+  }
+
   if (inputOne.checked) {
     if (subscriptionBlock.children[2].children[0].children[0].classList.contains('subscription__bar--six')) {
       subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--six');
