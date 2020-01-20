@@ -221,10 +221,11 @@
     &:not(:last-child) {
       margin-bottom: 20px;
     }
+
   }
 
   .discounts__item--free-month {
-    margin-bottom: 0;
+    //margin-bottom: 0;
 
     & p {
       width: 75%;
