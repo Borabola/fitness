@@ -53,6 +53,10 @@
   background-color: $bg-dark;
   text-align: center;
   overflow: hidden;
+
+  &:nth-child(n) {
+    width: 100%;
+  }
 }
 
 

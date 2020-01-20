@@ -26,7 +26,7 @@
   }
 }
 
-.advantages__container {
+/*.advantages__container {
   position: relative;
   //display: flex;
   //flex-direction: column;
@@ -40,6 +40,24 @@
   width: 100%;
   height: auto;
   //height: 370px; //30vw; //23.65vw;
+  padding-left: 3px;
+}*/
+
+.advantages__container {
+  position: relative;
+
+  display: -ms-grid;
+
+  display: grid;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  -ms-grid-columns: 33.53% 32.95% 33.53%;
+  grid-template-columns: 33.53% 32.95% 33.53%;
+  grid-template-areas:
+    "area equipment parking"
+    "comfort equipment experience";
+  width: 100%;
+  height: auto;
   padding-left: 3px;
 }
 
@@ -70,7 +88,16 @@
   }
 
   &--area {
-    grid-area: area;
+    //grid-area: area;
+    //grid-area: 1/1/2/2;
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-row-span:  1;
+    grid-row-end:  2;
+    -ms-grid-column-span: 1;
+    grid-column-end: 2;
     padding: 20px 0 77px 43px;
 
     & .advantages__number {
@@ -80,12 +107,30 @@
   }
 
   &--comfort {
-    grid-area: comfort;
+    //grid-area: comfort;
+    //grid-area: 2/1/3/2;
+    -ms-grid-row: 2;
+    grid-row-start: 2;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-row-span:  1;
+    grid-row-end:  3;
+    -ms-grid-column-span: 1;
+    grid-column-end: 2;
     padding: 73px 0 20px 32px;
   }
 
   &--parking {
-    grid-area: parking;
+    //grid-area: parking;
+    //grid-area: 1/3/2/4;
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+    -ms-grid-column: 3;
+    grid-column-start: 3;
+    -ms-grid-row-span:  1;
+    grid-row-end:  2;
+    -ms-grid-column-span: 1;
+    grid-column-end: 4;
     padding: 20px 0 77px 21px;
   }
 
@@ -100,7 +145,16 @@
   } */
 
   &--experience {
-    grid-area: experience;
+    //grid-area: experience;
+    //grid-area: 2/3/3/4;
+    -ms-grid-row: 2;
+    grid-row-start: 2;
+    -ms-grid-column: 3;
+    grid-column-start: 3;
+    -ms-grid-row-span:  1;
+    grid-row-end:  3;
+    -ms-grid-column-span: 1;
+    grid-column-end: 4;
     padding: 73px 0 20px 21px;
   }
 
@@ -178,15 +232,22 @@
 }
 
 .advantages__item--equipment {
-    grid-area: equipment;
-    -webkit-box-sizing: content-box;
+    grid-area: 1 / 2 / 3 / 3;
+    //grid-area: equipment;
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+    -ms-grid-column: 2;
+    grid-column-start: 2;
+    -ms-grid-row-span:  2;
+    grid-row-end:  3;
+    -ms-grid-column-span: 1;
+    grid-column-end: 3;
+
     box-sizing: border-box;
     width: 70%;
     height: 85%;
     padding: 34px 30px 35px;
     margin: 27px auto 50px auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     background-color: #1c3374;

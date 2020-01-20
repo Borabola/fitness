@@ -68,6 +68,10 @@
     }
   }
 
+  &:nth-child(n) {
+    width: 100%;
+  }
+
   & b {
     display: block;
     width: 100%;
@@ -78,6 +82,7 @@
   }
 
   & p {
+    width: 100%;
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;
