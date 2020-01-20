@@ -105,7 +105,7 @@
   padding-top: 62px;
   padding-bottom: 67px;
   margin-right: 3.5%;
-  margin-bottom: 43px;
+  margin-bottom: 36px; //43px;
   background-color: $second-color;
   text-align: center;
   z-index: 2;
@@ -287,13 +287,17 @@
     width: 88.28%;
     padding-top: 102px;
     padding-right: 5px;
-    padding-bottom: 65px;
+    padding-bottom: 60px;
 
     & h2 {
       margin-bottom: 27px;
       font-size: 42px;
       line-height: 42px;
     }
+  }
+
+  .subscription__range {
+    margin: 0 auto 44px;
   }
 
   .subscription__list {
@@ -304,13 +308,14 @@
   .subscription__item {
     width: 65.19%;
     min-height: 448px;
-    padding-top: 67px;
+    padding-top: 62px;
+    padding-left: 5px;
     padding-bottom: 67px;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
     margin-right: 0;
 
     &:hover {
-      padding-top: 60px;
+      padding-top: 55px;
       padding-bottom: 60px;
     }
   }

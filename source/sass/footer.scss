@@ -53,7 +53,8 @@
 .page-footer__social {
   display: flex;
   justify-content: space-between;
-  width: 111px;
+  //width: 111px;
+  max-width: 25%;
   margin-top: -8px;
 }
 
