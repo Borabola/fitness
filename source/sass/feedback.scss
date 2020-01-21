@@ -80,6 +80,8 @@
 }
 
 .feedback__text {
+  box-sizing: border-box;
+  width: 100%;
   padding-left: 110px;
   text-align: left;
 

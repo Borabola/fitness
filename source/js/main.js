@@ -87,6 +87,8 @@ var maskOptions = {
 };
 var mask1 = IMask(elementForm, maskOptions);
 
+/*
+
 Math.easeInOutQuad = function(t, b, c, d) {
   t /= d / 2;
   if (t < 1) {
@@ -180,7 +182,7 @@ function scrollTo(to, callback, duration) {
   animateScroll();
 }
 
-init();
+init(); */
 
 /* Выбор абонемента */
 
@@ -210,9 +212,27 @@ function onRadioInputChange() {
   if (oldSubscriptionList) {
     subscriptionBlock.removeChild(oldSubscriptionList);
   }
-  var subListTemplate = document.querySelector('#subscription-list-template')
+
+  //console.log(document.querySelector('#subscription-list-template'));
+  //console.log(document.querySelector('#subscription-list-template').content);
+  /*var subListTemplate = document.querySelector('#subscription-list-template')
     .content
     .querySelector('.subscription__list');
+  var subscriptionList = subListTemplate.cloneNode(true); */
+
+  if (document.querySelector('#subscription-list-template')
+    .content) {
+    var subListTemplate = document.querySelector('#subscription-list-template')
+      .content
+      .querySelector('.subscription__list');
+  } else {
+    var subListBlock = document.querySelector('#subscription-list-template');
+    subListTemplate = subListBlock.querySelector('.subscription__list');
+  }
+  //For IE
+  //var subListBlock = document.querySelector('#subscription-list-template');
+  //var subListTemplate = subListBlock.querySelector('.subscription__list');
+
   var subscriptionList = subListTemplate.cloneNode(true);
 
   if (subscriptionList.classList.contains('subscription__list--hidden')) {
