@@ -321,14 +321,14 @@
     }
   }
 
-  .subscription__item:hover > .button--subscription,
+  /*8.subscription__item:hover > .button--subscription,
   .subscription__item:focus > .button--subscription {
     padding: 26px 44px;
     margin-top: 33px;
     color: $second-color;
     background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
     border: none;
-  }
+  }*/
 
   .subscription__period {
     width: 48.99%;
@@ -398,7 +398,7 @@
     min-height: unset;
     padding-top: 50px;
     padding-bottom: 54px;
-    margin-left: 4px;
+    //margin-left: 4px;
     margin-bottom: 35px;
 
     &:hover {

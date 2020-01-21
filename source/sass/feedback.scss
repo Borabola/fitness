@@ -46,8 +46,8 @@
 .feedback__slider-item {
   //box-sizing: border-box;
   position: relative;
-  flex: 0 0 100%;
-  //flex: 0 0 79.5%;
+  //flex: 0 0 100%;
+  flex: 0 0 79.5%;
   //width: 79%;
   //height: 21.52vw;
   padding: 54px 55px 58px 60px;
@@ -79,7 +79,7 @@
 
 .feedback__text {
   //box-sizing: border-box;
-  width: 60%;
+  width: 75.3%;
   padding-left: 110px;
   text-align: left;
 
@@ -147,8 +147,10 @@
   }
 
   .feedback__slider-item {
-    flex: 0 0 80.5%;
-    padding: 54px 48px 58px 62px;
+    flex: 0 0 80%;
+    //width: 79%;
+    //height: 21.52vw;
+    padding: 54px 9.57% 58px 10.43%;
   }
 
   .feedback__img-container {
@@ -192,7 +194,7 @@
 
   .feedback__slider-item {
     flex: 0 0 75.8%;
-    padding: 46px 28px 37px;
+    padding: 46px 12.1% 37px;
 
   }
 

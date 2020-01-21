@@ -14,7 +14,7 @@
   display: inline-flex;
   height: 24px;
   vertical-align: middle;
-  margin-right: 20px;
+  margin-right: 25px;
 
   &--vk {
     width: 24px;
@@ -79,22 +79,30 @@
 
 @media (max-width: $tablet-width) {
   .social__list {
-    width: 100px;
+    //width: 100px;
+    margin-top: 2px;
+    flex-wrap: nowrap;
+  }
+
+  .social__item {
+    margin-right: 20px;
   }
 }
 
 @media (max-width: $mobile-width) {
   .social__list {
-    width: 143px;
+    //width: 143px;
+    //margin-top: 10px;
   }
 
   .social__item {
     height: 27px;
+    margin-right: 35px;
 
     &--vk {
       width: 32px;
       height: 17px;
-      margin: auto 0;
+      //margin: auto 0;
     }
 
     &--ig {
