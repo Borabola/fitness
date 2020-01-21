@@ -160,10 +160,6 @@
   }
 }
 
-/*.discounts__item--free-month {
-  margin-bottom: 40px;
-}*/
-
 @media (max-width: $tablet-width) {
   .discounts__wrapper {
     width: 88.28%;
@@ -190,10 +186,6 @@
 
   .discounts__year {
     width: 41%;
-
-    /*& a {
-      max-width: 80px;
-    }*/
   }
 
   .discounts__picture {
@@ -222,7 +214,6 @@
     &:not(:last-child) {
       margin-bottom: 20px;
     }
-
   }
 
   .discounts__item--free-month {
@@ -317,9 +308,9 @@
 
   .discounts__item--20 p,
   .discounts__item--20 h4 {
-     width: 75%;
-     margin: 0 auto;
-   }
+    width: 75%;
+    margin: 0 auto;
+  }
 
   .discounts__item--20 h4 {
     margin: 0 auto 8px auto;

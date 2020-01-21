@@ -87,7 +87,6 @@ var maskOptions = {
 };
 var mask1 = IMask(elementForm, maskOptions);
 
-/*
 
 Math.easeInOutQuad = function(t, b, c, d) {
   t /= d / 2;
@@ -121,7 +120,8 @@ function init() {
   var anchor1      = document.querySelector('#subscription');
 
 
-  anchor1Link.addEventListener('click', (evt) => { scrollTo(anchor1, evt, durationTime) }, false);
+  anchor1Link.addEventListener('click', function (evt)  {
+    scrollTo(anchor1, evt, durationTime) }, false);
 }
 
 function scrollTopValue(domElement) { //DEBUG
@@ -182,7 +182,7 @@ function scrollTo(to, callback, duration) {
   animateScroll();
 }
 
-init(); */
+init();
 
 /* Выбор абонемента */
 
