@@ -67,12 +67,13 @@
 }
 
 .subscription__bar--six {
-  margin-left: 35%;
   width: 20%;
+  margin: 0 45% 0 35%;
 }
 
 .subscription__bar--twelve {
   margin-left: 80%;
+  margin-right: 0;
   width: 20%;
 }
 
@@ -81,12 +82,13 @@
 }
 
 #six:checked ~ .subscription__bar {
-  margin-left: 35%;
   width: 20%;
+  margin: 0 45% 0 35%;
 }
 
 #twelve:checked ~ .subscription__bar {
   margin-left: 80%;
+  margin-right: 0;
   width: 20%;
 }
 
@@ -303,6 +305,10 @@
 
   .subscription__range {
     margin: 0 auto 44px;
+  }
+
+  .subscription__bar--six {
+    margin-left: 38%;
   }
 
   .subscription__list {

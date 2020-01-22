@@ -267,6 +267,9 @@ function onRadioInputChange() {
     } else {
       if (inputTwelve.checked) {
         subscriptionBlock.children[2].children[0].children[0].classList.add("subscription__bar--twelve");
+        if (subscriptionBlock.children[2].children[0].children[0].classList.contains('subscription__bar--six')) {
+          subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--six');
+        }
         subscriptionList.children[1].children[1].textContent = TwelveMonthPrice.lessons;
         subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.coach + '<span>₽</span>');
         subscriptionList.children[1].children[2].classList.remove("subscription__price--5000");

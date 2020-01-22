@@ -34,7 +34,7 @@
 }
 
 .coach__slider-btn-container {
-  margin-left: 56px;
+  margin-left: calc(3.33% + 16px);
   margin-right: 16px;
   overflow: hidden;
 }
@@ -48,12 +48,10 @@
 .coach__slider-item {
   //box-sizing: border-box;
   position: relative;
-  flex: 0 0 21.7%;
-  //width: 25%;
+  flex: 0 0 21.67%;
   height: auto;
   margin: 0;
-  padding: 0;
-  padding-right: 40px;
+  padding: 0 3.333% 0 0;
   text-align: center;
   overflow: hidden;
 
@@ -130,7 +128,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% - 40px);
+  width: 87%;
   height: 98%;
   background-color: rgba(16, 38, 84, 0.89);
 }
@@ -202,16 +200,17 @@
   }
 
   .coach__slider-btn-container {
-    margin-right: 26px; //32px;
+    //margin-right: 26px; //32px;
+    margin-left: calc(5.5% + 18px);
+    margin-right: 18px;
   }
 
   .coach__slider-item {
     //box-sizing: border-box;
     position: relative;
-    flex: 0 0 45%;
-    //width: 50%;
+    flex: 0 0 44.5%;
     height: auto;
-    padding-right: 5%; //30px;
+    padding-right: 5.51%; //30px;
     margin: 0;
 
     & img,
@@ -249,8 +248,8 @@
   }
 
   .coach__slider-item:hover::before {
-    width: calc(100% - 30px);
-    height: 98%;
+    width: 89%;
+    height: 98.5%;
   }
 }
 
