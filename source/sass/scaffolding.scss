@@ -65,6 +65,12 @@ picture {
   padding: 0;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .visually-hidden:not(:focus):not(:active),
 .visually-hidden {
   position: absolute;
