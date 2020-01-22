@@ -186,8 +186,6 @@ init();
 
 /* Выбор абонемента */
 
-
-
 function onRadioInputChange() {
   var OneMonthPrice = {
     lessons: '12 занятий',
@@ -246,39 +244,39 @@ function onRadioInputChange() {
     if (subscriptionBlock.children[2].children[0].children[0].classList.contains('subscription__bar--twelve')) {
       subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--twelve');
     }
-    subscriptionList.children[0].children[1].textContent = OneMonthPrice.lessons;
-    subscriptionList.children[0].children[2].insertAdjacentHTML("afterbegin", OneMonthPrice.coach + '<span>₽</span>');
-    subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", OneMonthPrice.day + '<span>₽</span>');
-    subscriptionList.children[2].children[2].insertAdjacentHTML("afterbegin", OneMonthPrice.fullday + '<span>₽</span>');
+    subscriptionList.children[1].children[1].textContent = OneMonthPrice.lessons;
+    subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", OneMonthPrice.coach + '<span>₽</span>');
+    subscriptionList.children[2].children[2].insertAdjacentHTML("afterbegin", OneMonthPrice.day + '<span>₽</span>');
+    subscriptionList.children[3].children[2].insertAdjacentHTML("afterbegin", OneMonthPrice.fullday + '<span>₽</span>');
   } else {
     if (inputSix.checked) {
       subscriptionBlock.children[2].children[0].children[0].classList.add("subscription__bar--six");
       if (subscriptionBlock.children[2].children[0].children[0].classList.contains('subscription__bar--twelve')) {
         subscriptionBlock.children[2].children[0].children[0].classList.remove('subscription__bar--twelve');
       }
-      subscriptionList.children[0].children[1].textContent = SixMonthPrice.lessons;
-      subscriptionList.children[0].children[2].insertAdjacentHTML("afterbegin", SixMonthPrice.coach + '<span>₽</span>');
-      subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
-      subscriptionList.children[0].children[2].classList.add("subscription__price--30000");
-      subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", SixMonthPrice.day + '<span>₽</span>');
-      subscriptionList.children[1].children[2].classList.remove("subscription__price--1700");
-      subscriptionList.children[1].children[2].classList.add("subscription__price--10000");
-      subscriptionList.children[2].children[2].insertAdjacentHTML("afterbegin", SixMonthPrice.fullday + '<span>₽</span>');
-      subscriptionList.children[2].children[2].classList.remove("subscription__price--2700");
-      subscriptionList.children[2].children[2].classList.add("subscription__price--16000");
+      subscriptionList.children[1].children[1].textContent = SixMonthPrice.lessons;
+      subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", SixMonthPrice.coach + '<span>₽</span>');
+      subscriptionList.children[1].children[2].classList.remove("subscription__price--5000");
+      subscriptionList.children[1].children[2].classList.add("subscription__price--30000");
+      subscriptionList.children[2].children[2].insertAdjacentHTML("afterbegin", SixMonthPrice.day + '<span>₽</span>');
+      subscriptionList.children[2].children[2].classList.remove("subscription__price--1700");
+      subscriptionList.children[2].children[2].classList.add("subscription__price--10000");
+      subscriptionList.children[3].children[2].insertAdjacentHTML("afterbegin", SixMonthPrice.fullday + '<span>₽</span>');
+      subscriptionList.children[3].children[2].classList.remove("subscription__price--2700");
+      subscriptionList.children[3].children[2].classList.add("subscription__price--16000");
     } else {
       if (inputTwelve.checked) {
         subscriptionBlock.children[2].children[0].children[0].classList.add("subscription__bar--twelve");
-        subscriptionList.children[0].children[1].textContent = TwelveMonthPrice.lessons;
-        subscriptionList.children[0].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.coach + '<span>₽</span>');
-        subscriptionList.children[0].children[2].classList.remove("subscription__price--5000");
-        subscriptionList.children[0].children[2].classList.add("subscription__price--50000");
-        subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.day + '<span>₽</span>');
-        subscriptionList.children[1].children[2].classList.remove("subscription__price--1700");
-        subscriptionList.children[1].children[2].classList.add("subscription__price--20000");
-        subscriptionList.children[2].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.fullday + '<span>₽</span>');
-        subscriptionList.children[2].children[2].classList.remove("subscription__price--2700");
-        subscriptionList.children[2].children[2].classList.add("subscription__price--32000");
+        subscriptionList.children[1].children[1].textContent = TwelveMonthPrice.lessons;
+        subscriptionList.children[1].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.coach + '<span>₽</span>');
+        subscriptionList.children[1].children[2].classList.remove("subscription__price--5000");
+        subscriptionList.children[1].children[2].classList.add("subscription__price--50000");
+        subscriptionList.children[2].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.day + '<span>₽</span>');
+        subscriptionList.children[2].children[2].classList.remove("subscription__price--1700");
+        subscriptionList.children[2].children[2].classList.add("subscription__price--20000");
+        subscriptionList.children[3].children[2].insertAdjacentHTML("afterbegin", TwelveMonthPrice.fullday + '<span>₽</span>');
+        subscriptionList.children[3].children[2].classList.remove("subscription__price--2700");
+        subscriptionList.children[3].children[2].classList.add("subscription__price--32000");
       }
     }
   }
