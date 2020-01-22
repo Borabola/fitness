@@ -81,11 +81,13 @@
 }
 
 #six:checked ~ .subscription__bar {
-  width: 60%;
+  margin-left: 35%;
+  width: 20%;
 }
 
 #twelve:checked ~ .subscription__bar {
-  width: 100%;
+  margin-left: 80%;
+  width: 20%;
 }
 
 .subscription__list {
